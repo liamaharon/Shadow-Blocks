@@ -10,7 +10,7 @@ import java.util.List;
 public class Loader {
     // stores the world dimensions
     private static int[] worldDimensions = new int[2];
-    // represents the state of the game world. first two lists represent x,y, next list represents the sprites at those
+    // represents the game world. first two lists represent x,y, next list represents the sprites at those
     // coordinates. (can have stacked sprites)
     private static ArrayList<List<List<Sprite>>> worldState = new ArrayList<>();
 		
@@ -32,7 +32,7 @@ public class Loader {
             // now that we know the dimensions of the world, initialise it
             initialiseWorldState();
 
-            // next lines give sprite details
+            // next lines give sprite details. parse each sprite and add to the world object
             while ((text = br.readLine()) != null) {
                 addSpriteToWorld(stringToSprite(text));
             }
@@ -42,6 +42,7 @@ public class Loader {
         return worldState;
 	}
 
+	// initialises world state to the dimensions of the world
 	private static void initialiseWorldState() {
 	    int xMax = worldDimensions[0];
 	    int yMax = worldDimensions[1];
@@ -64,12 +65,8 @@ public class Loader {
                 .add(sprite);
     }
 
-    public static int[] getWorldDimensions() {
-        return worldDimensions;
-    }
-
     // takes a line in CSV form containing the details of a sprite and returns a sprite with those properties
-	private static Sprite stringToSprite(String text) throws SlickException {
+    private static Sprite stringToSprite(String text) throws SlickException {
         String[] spriteDetails = text.split(",");
 
         String spriteIdentifier = spriteDetails[0];
@@ -96,5 +93,9 @@ public class Loader {
             case "player": return new Player(src,xPos,yPos);
             default: throw new IllegalArgumentException("Unknown Sprite: " + spriteIdentifier);
         }
+    }
+
+    public static int[] getWorldDimensions() {
+        return worldDimensions;
     }
 }

@@ -8,12 +8,13 @@ public class Player extends Sprite {
         super(src, xPos, yPos, false);
     }
 
+    // move player to a new position in the world
     public void move(int xPos, int yPos) {
-        World.worldState
+        World.getWorldState()
                 .get(getxPos())
                 .get(getyPos())
                 .remove(this);
-        World.worldState
+        World.getWorldState()
                 .get(xPos)
                 .get(yPos)
                 .add(this);
