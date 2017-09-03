@@ -5,19 +5,11 @@ import org.newdawn.slick.SlickException;
 
 public class Player extends Sprite {
     public Player (String src, int xPos, int yPos) throws SlickException {
-        super(src, xPos, yPos, false);
+        super(src, xPos, yPos);
     }
 
     // move player to a new position in the world
     public void move(int xPos, int yPos) {
-        World.getWorldState()
-                .get(getxPos())
-                .get(getyPos())
-                .remove(this);
-        World.getWorldState()
-                .get(xPos)
-                .get(yPos)
-                .add(this);
         setxPos(xPos);
         setyPos(yPos);
     }
@@ -26,28 +18,28 @@ public class Player extends Sprite {
         if (input.isKeyPressed(Input.KEY_UP)) {
             int xPos = getxPos();
             int yPos = getyPos();
-            if (!World.isBlocked(xPos, yPos - 1)) {
+            if (!Loader.isBlocked(xPos, yPos - 1)) {
                 move(xPos, yPos - 1);
             }
         }
         if (input.isKeyPressed(Input.KEY_DOWN)) {
             int xPos = getxPos();
             int yPos = getyPos();
-            if (!World.isBlocked(xPos, yPos + 1)) {
+            if (!Loader.isBlocked(xPos, yPos + 1)) {
                 move(xPos, yPos + 1);
             }
         }
         if (input.isKeyPressed(Input.KEY_LEFT)) {
             int xPos = getxPos();
             int yPos = getyPos();
-            if (!World.isBlocked(xPos - 1, yPos)) {
+            if (!Loader.isBlocked(xPos - 1, yPos)) {
                 move(xPos - 1, yPos);
             }
         }
         if (input.isKeyPressed(Input.KEY_RIGHT)) {
             int xPos = getxPos();
             int yPos = getyPos();
-            if (!World.isBlocked(xPos + 1, yPos)) {
+            if (!Loader.isBlocked(xPos + 1, yPos)) {
                 move(xPos + 1, yPos);
             }
         }

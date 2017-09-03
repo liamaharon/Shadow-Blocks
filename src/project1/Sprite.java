@@ -8,13 +8,18 @@ public abstract class Sprite {
     private Image img;
     private int xPos;
     private int yPos;
-    private boolean solid;
 
-    public Sprite(String src, int xPos, int yPos, boolean solid) throws SlickException {
+    public Sprite(String src, int xPos, int yPos) throws SlickException {
         img = new Image(src);
         this.xPos = xPos;
         this.yPos = yPos;
-        this.solid = solid;
+    }
+
+    public void render() {
+        // convert tile position to pixel position and draw to screen
+        int xPixel = (xPos * App.TILE_SIZE) + (App.SCREEN_WIDTH / 2) - (Loader.getWorldDimensions()[0] * App.TILE_SIZE / 2);
+        int yPixel = (yPos * App.TILE_SIZE) + (App.SCREEN_HEIGHT / 2) - (Loader.getWorldDimensions()[1] * App.TILE_SIZE / 2);
+        img.draw(xPixel, yPixel);
     }
 
     public int getxPos() {
@@ -31,14 +36,6 @@ public abstract class Sprite {
 
     public int getyPos() {
         return yPos;
-    }
-
-    public Image getImg() {
-        return img;
-    }
-
-    public boolean getSolid() {
-        return solid;
     }
 
     public void update(Input input, int delta) {
