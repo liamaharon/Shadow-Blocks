@@ -4,8 +4,8 @@ import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
 public class Player extends Sprite {
-    public Player (String src, int xPos, int yPos) throws SlickException {
-        super(src, xPos, yPos);
+    public Player (int xPos, int yPos) throws SlickException {
+        super("res/player_left.png", xPos, yPos);
     }
 
     // move player to a new position in the world

@@ -23,11 +23,11 @@ public class App extends BasicGame
     public static final int SCREEN_HEIGHT = 600;
     /** size of the tiles, in pixels */
     public static final int TILE_SIZE = 32;
-    
+
     private World world;
 
     public App()
-    {    	
+    {
         super("Shadow Blocks");
     }
 

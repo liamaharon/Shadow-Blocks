@@ -2,10 +2,8 @@ package project1;
 
 import org.newdawn.slick.SlickException;
 
-// this class is redundant. it's here because I plan on using it in project 2. in the spec it says we are allowed to
-// write our code with project 2 in mind
 public class Stone extends Sprite {
-    public Stone (String src, int xPos, int yPos) throws SlickException {
-        super(src, xPos, yPos);
+    public Stone (int xPos, int yPos) throws SlickException {
+        super("res/stone.png", xPos, yPos);
     }
 }
