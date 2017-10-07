@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.lang.*;
 
 import org.newdawn.slick.SlickException;
 
@@ -67,23 +68,24 @@ public class Loader {
      * Creates and initialises a LevelManager.
      * Adapted from Grok worksheet "Reading Files".
      */
-    public static void loadLevel(File file) throws SlickException {
+    public static LevelManager loadLevel(File file) throws SlickException {
         String levelPath = file.getPath();
         String curLine;
 
         // attributes to initialise LevelManager
-        int levelWidth;
-        int levelHeight;
-        List<List<RegularSprite>> regularSpries = new ArrayList<>();
+        int levelWidth = 0;
+        int levelHeight = 0;
+        int nTargetTiles = 0;
+        List<RegularSprite> regularSprites = new ArrayList<>();
         List<List<Boolean>> permBlockedTiles = new ArrayList<>();
-        List<List<Target>> targetTiles = new ArrayList<>();
-        TileCoord switchCoord;
+        List<List<Boolean>> targetTiles = new ArrayList<>();
+        TileCoord switchCoord = null;
 
         // attributes to initialise LevelManager's initial GameState
-        List<List<SmartSprite>> smartSprites = new ArrayList<>();
+        List<SmartSprite> smartSprites = new ArrayList<>();
         List<List<CrackedWall>> crackedWalls = new ArrayList<>();
         List<List<Block>> blocks = new ArrayList<>();
-        TileCoord playerCoord;
+        TileCoord playerCoord = null;
 
         try (BufferedReader br = new BufferedReader(new FileReader(levelPath))) {
 
@@ -94,59 +96,70 @@ public class Loader {
             levelHeight = Integer.valueOf(dimensions[1]);
 
             // now that we know dimensions, we can initialise all our 2D lists
-            // that are of shape world dimensions
-            initialise2DList(regularSpries, levelWidth, levelHeight, null);
-            initialise2DList(smartSprites, levelWidth, levelHeight, null);
-            initialise2DList(permBlockedTiles, levelWidth, levelHeight, true);
-            initialise2DList(targetTiles, levelWidth, levelHeight, null);
+            // that are of shape level dimensions
+            initialise2DList(permBlockedTiles, levelWidth, levelHeight, false);
+            initialise2DList(targetTiles, levelWidth, levelHeight, false);
             initialise2DList(crackedWalls, levelWidth, levelHeight, null);
-
 
             // next lines give sprite details
             RegularSprite curSprite;
-
-            int curSpriteX; int curSpriteY; String curSpriteName; String curSpriteSuperClassName;
             while ((curLine = br.readLine()) != null) {
                 // parse each sprite, reference it and/or it's properties
                 // in necessary places
                 curSprite = stringToSprite(curLine);
-                curSpriteX = curSprite.getPos().getX();
-                curSpriteY = curSprite.getPos().getY();
-                curSpriteName = curSprite
-                                    .getClass()
-                                    .getSimpleName();
-                curSpriteSuperClassName = curSprite
-                                            .getClass()
-                                            .getSuperclass()
-                                            .getSimpleName();
-                // get playerCoord & crackedWalls for GameState, switchCoord for
-                // LevelManager
-                switch(curSpriteName) {
-                    case "Player": playerCoord = curSprite.getPos();
-                    case "Switch": switchCoord = curSprite.getPos();
-                    case "CrackedWall": crackedWalls
-                                            .get(curSpriteX)
-                                            .set(curSpriteY, (CrackedWall) curSprite);
+
+                if (curSprite instanceof  Player) {
+                    playerCoord = curSprite.getPos();
                 }
-                switch(curSpriteSuperClassName) {
-                    case "RegularSprite": regularSpries
-                                             .get(curSpriteX)
-                                             .set(curSpriteY, curSprite);
-                    case "SmartSprite": smartSprites
-                            .get(curSpriteX)
-                            .set(curSpriteY, (SmartSprite) curSprite);
-                    case "Block": blocks
-                            .get(curSpriteX)
-                            .set(curSpriteY, (Block) curSprite);
+                else if (curSprite instanceof Switch) {
+                    switchCoord = curSprite.getPos();
+                }
+                else if (curSprite instanceof CrackedWall) {
+                    crackedWalls
+                            .get(curSprite.getPos().getX())
+                            .set(curSprite.getPos().getY(), (CrackedWall) curSprite);
+                }
+                else if (curSprite instanceof Target) {
+                    nTargetTiles++;
+                    targetTiles
+                            .get(curSprite.getPos().getX())
+                            .set(curSprite.getPos().getY(), true);
+                }
+                else if (curSprite instanceof Block) {
+                    blocks
+                            .get(curSprite.getPos().getX())
+                            .set(curSprite.getPos().getY(), (Block) curSprite);
+                }
+                else if (curSprite instanceof Wall) {
+                    permBlockedTiles
+                            .get(curSprite.getPos().getX())
+                            .set(curSprite.getPos().getY(), true);
                 }
 
+                if (curSprite instanceof SmartSprite) {
+                    smartSprites.add((SmartSprite) curSprite);
+                } else {
+                    regularSprites.add(curSprite);
+                }
             }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-//        return new LevelManager();
+        // finished organising all necessary information from level file, finally
+        // initialise a LevelManager an initial GameState for it!
+        GameState initialGameState = new GameState(smartSprites,
+                                                   crackedWalls,
+                                                   blocks,
+                                                   playerCoord);
+        return new LevelManager(levelWidth,
+                                levelHeight,
+                                permBlockedTiles,
+                                targetTiles,
+                                nTargetTiles,
+                                regularSprites,
+                                switchCoord,
+                                initialGameState);
     }
 
 //

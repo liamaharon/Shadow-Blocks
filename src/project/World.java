@@ -16,8 +16,7 @@ public class World {
 
         // load up each level and play!
         for (File level : levels) {
-//            curLevelManager = Loader.loadLevel(level);
-            Loader.loadLevel(level);
+            curLevelManager = Loader.loadLevel(level);
 
         }
     }
