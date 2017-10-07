@@ -4,18 +4,20 @@ import java.io.File;
 
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
+import org.newdawn.slick.SlickException;
 
 public class World {
     private File[] levels;
     private LevelManager curLevelManager;
 
-    public World() {
+    public World() throws SlickException {
         // load in level files
         levels = Loader.getSortedLevels();
 
         // load up each level and play!
         for (File level : levels) {
-            curLevelManager = Loader.loadLevel(level);
+//            curLevelManager = Loader.loadLevel(level);
+            Loader.loadLevel(level);
 
         }
     }

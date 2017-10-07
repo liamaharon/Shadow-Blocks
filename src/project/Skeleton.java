@@ -6,7 +6,7 @@ public class Skeleton extends Baddie {
     private Direction directionMoving;
 
     public Skeleton(TileCoord pos) throws SlickException {
-        super("res/skeleton.png", pos);
+        super("res/skull.png", pos);
         directionMoving = Direction.UP;
     }
 

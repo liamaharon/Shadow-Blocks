@@ -8,7 +8,7 @@ public class CrackedWall extends SmartSprite {
     private int timeExploded;
 
     public CrackedWall(TileCoord pos) throws SlickException {
-        super("res/cracked_wall", pos);
+        super("res/cracked_wall.png", pos);
         isExploding = false;
     }
 

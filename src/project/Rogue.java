@@ -2,10 +2,10 @@ package project;
 
 import org.newdawn.slick.SlickException;
 
-public class Rouge extends Baddie {
+public class Rogue extends Baddie {
 
-    public Rouge(TileCoord pos) throws SlickException {
-        super("res/rouge.png", pos);
+    public Rogue(TileCoord pos) throws SlickException {
+        super("res/rogue.png", pos);
     }
 
     @Override
