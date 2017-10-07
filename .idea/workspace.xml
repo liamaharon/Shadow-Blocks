@@ -2,61 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8d3b8f6-8d45-4740-88e9-3c8727c3cb2c" name="Default" comment="Started work on">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/codeStyleSettings.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/dictionaries/liam.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/Baddie.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/Block.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/CrackedWall.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/Door.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/Floor.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/GameState.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/IcyStone.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/LevelManager.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/Loader.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/Mage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/Player.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/RegularSprite.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/Renderer.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/Rouge.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/Skeleton.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/SmartSprite.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/Stone.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/Switch.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/Target.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/TileCoord.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/Tnt.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/Wall.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/project/World.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/Baddie.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/Block.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/Character.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/CrackedWall.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/Door.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/Floor.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/GameState.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/IcyStone.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/LevelManager.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/Loader.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/Mage.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/Player.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/RegularSprite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/Rouge.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/Skeleton.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/SmartSprite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/Sprite.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/Stone.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/Switch.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/TNT.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/Target.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/TileCoord.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/Wall.java" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/project1/World.java" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/project1/App.java" afterPath="$PROJECT_DIR$/src/project/App.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/project1/Direction.java" afterPath="$PROJECT_DIR$/src/project/Direction.java" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shadow-blocks/project1/Loader.class" afterPath="$PROJECT_DIR$/out/production/shadow-blocks/project1/Loader.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/shadow-blocks/project1/World.class" afterPath="$PROJECT_DIR$/out/production/shadow-blocks/project1/World.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -87,7 +35,7 @@
             <entry file="file://$PROJECT_DIR$/src/project/IcyStone.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="486">
-                  <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+                  <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
                   <folding>
                     <element signature="e#351#352#0" expanded="true" />
                     <element signature="e#381#382#0" expanded="true" />
@@ -100,7 +48,7 @@
             <entry file="file://$PROJECT_DIR$/src/project/Block.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="405">
-                  <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+                  <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -110,7 +58,7 @@
             <entry file="file://$PROJECT_DIR$/src/project/Loader.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="245">
-                  <caret line="76" column="0" lean-forward="true" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
+                  <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -122,7 +70,7 @@
             <entry file="file://$PROJECT_DIR$/src/project/RegularSprite.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="432">
-                  <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+                  <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -130,11 +78,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="groovy_console.groovy" pinned="false" current-in-tab="true">
-            <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/groovy/groovy_console.groovy">
+          <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/.gitignore">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+                  <caret line="0" column="4" lean-forward="true" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
                   <folding />
                 </state>
               </provider>
@@ -218,6 +166,7 @@
         <option value="$PROJECT_DIR$/src/project1/Tnt.java" />
         <option value="$PROJECT_DIR$/src/project1/Wall.java" />
         <option value="$PROJECT_DIR$/src/project/RegularSprite.java" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -261,22 +210,6 @@
             <path>
               <item name="shadow-blocks" type="b2602c69:ProjectViewProjectNode" />
               <item name="shadow-blocks" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shadow-blocks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shadow-blocks" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shadow-blocks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shadow-blocks" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="shadow-blocks" type="b2602c69:ProjectViewProjectNode" />
-              <item name="shadow-blocks" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="project" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -424,12 +357,20 @@
       <workItem from="1504858875739" duration="52000" />
       <workItem from="1506738924727" duration="154000" />
       <workItem from="1506739116218" duration="8355000" />
-      <workItem from="1507346801885" duration="11787000" />
+      <workItem from="1507346801885" duration="12032000" />
     </task>
+    <task id="LOCAL-00001" summary="Begun work on Project 2B">
+      <created>1507358674516</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1507358674517</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="20381000" />
+    <option name="totallyTimeSpent" value="20626000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="96" y="1074" width="2466" height="1448" extended-state="6" />
@@ -501,6 +442,10 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Begun work on Project 2B" />
+    <option name="LAST_COMMIT_MESSAGE" value="Begun work on Project 2B" />
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <option name="time" value="3" />
@@ -508,16 +453,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/project/App.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1647">
-          <caret line="72" column="39" lean-forward="false" selection-start-line="72" selection-start-column="27" selection-end-line="72" selection-end-column="39" />
-          <folding>
-            <element signature="imports" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/World.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="189">
@@ -770,7 +705,7 @@
     <entry file="file://$PROJECT_DIR$/src/project/Block.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="405">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+          <caret line="15" column="0" lean-forward="false" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -778,7 +713,7 @@
     <entry file="file://$PROJECT_DIR$/src/project/IcyStone.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="486">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding>
             <element signature="e#351#352#0" expanded="true" />
             <element signature="e#381#382#0" expanded="true" />
@@ -899,17 +834,7 @@
     <entry file="file://$PROJECT_DIR$/src/project/Loader.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
-          <caret line="76" column="0" lean-forward="true" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/RegularSprite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="16" column="5" lean-forward="true" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <caret line="76" column="0" lean-forward="false" selection-start-line="76" selection-start-column="0" selection-end-line="76" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -920,6 +845,24 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/RegularSprite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="4" lean-forward="true" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
           <folding />
         </state>
       </provider>
