@@ -1,5 +1,6 @@
 package project;
 
+import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
 public class Tnt extends Block {
@@ -9,9 +10,10 @@ public class Tnt extends Block {
     }
 
     @Override
-    public void update() {
-        super.update();
+    public void update(Input input, LevelManager levelManager) {
+        super.update(input, levelManager);
     }
+
 
     private void collideWithCrackedWall(CrackedWall wall) {
 

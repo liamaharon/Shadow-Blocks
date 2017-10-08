@@ -1,5 +1,6 @@
 package project;
 
+import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
 public abstract class SmartSprite extends RegularSprite {
@@ -8,7 +9,7 @@ public abstract class SmartSprite extends RegularSprite {
         super(src, pos);
     }
 
-    public void update() {
+    public void update(Input input, LevelManager levelManager) {
 
     }
 }

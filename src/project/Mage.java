@@ -1,5 +1,6 @@
 package project;
 
+import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
 public class Mage extends Baddie {
@@ -9,7 +10,7 @@ public class Mage extends Baddie {
     }
 
     @Override
-    public void update() {
-        super.update();
+    public void update(Input input, LevelManager levelManager) {
+        super.update(input, levelManager);
     }
 }

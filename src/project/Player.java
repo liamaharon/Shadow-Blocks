@@ -9,34 +9,30 @@ public class Player extends SmartSprite {
     }
 
     // move player to a new position in the world
-    public void move(Direction dir) {
-
+    public void move(TileCoord desiredPos, LevelManager levelManager) {
+        if (levelManager.isBlocked(desiredPos)) return;
+        setPos(desiredPos);
     }
 
-    public void update(Input input, int delta) {
+
+    @Override
+    public void update(Input input, LevelManager levelManager) {
+        TileCoord desiredPos;
         if (input.isKeyPressed(Input.KEY_UP)) {
-            TileCoord pos = getPos();
-//            if (!Loader.isBlocked(xPos, yPos - 1)) {
-//                move(xPos, yPos - 1);
-//            }
+            desiredPos = new TileCoord(getPos().getX(), getPos().getY()-1);
+            move(desiredPos, levelManager);
         }
-        if (input.isKeyPressed(Input.KEY_DOWN)) {
-            TileCoord pos = getPos();
-//            if (!Loader.isBlocked(xPos, yPos + 1)) {
-//                move(xPos, yPos + 1);
-//            }
+        else if (input.isKeyPressed(Input.KEY_DOWN)) {
+            desiredPos = new TileCoord(getPos().getX(), getPos().getY()+1);
+            move(desiredPos, levelManager);
         }
-        if (input.isKeyPressed(Input.KEY_LEFT)) {
-            TileCoord pos = getPos();
-//            if (!Loader.isBlocked(xPos - 1, yPos)) {
-//                move(xPos - 1, yPos);
-//            }
+        else if (input.isKeyPressed(Input.KEY_LEFT)) {
+            desiredPos = new TileCoord(getPos().getX()-1, getPos().getY());
+            move(desiredPos, levelManager);
         }
-        if (input.isKeyPressed(Input.KEY_RIGHT)) {
-            TileCoord pos = getPos();
-//            if (!Loader.isBlocked(xPos + 1, yPos)) {
-//                move(xPos + 1, yPos);
-//            }
+        else if (input.isKeyPressed(Input.KEY_RIGHT)) {
+            desiredPos = new TileCoord(getPos().getX()+1, getPos().getY());
+            move(desiredPos, levelManager);
         }
     }
 }

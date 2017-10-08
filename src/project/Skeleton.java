@@ -1,5 +1,6 @@
 package project;
 
+import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
 public class Skeleton extends Baddie {
@@ -11,7 +12,7 @@ public class Skeleton extends Baddie {
     }
 
     @Override
-    public void update() {
-        super.update();
+    public void update(Input input, LevelManager levelManager) {
+        super.update(input, levelManager);
     }
 }

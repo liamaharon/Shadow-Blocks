@@ -1,5 +1,6 @@
 package project;
 
+import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
 public class IcyStone extends Block {
@@ -12,7 +13,7 @@ public class IcyStone extends Block {
     }
 
     @Override
-    public void update() {
-        super.update();
+    public void update(Input input, LevelManager levelManager) {
+        super.update(input, levelManager);
     }
 }

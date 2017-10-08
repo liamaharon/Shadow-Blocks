@@ -1,5 +1,6 @@
 package project;
 
+import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
 public class CrackedWall extends SmartSprite {
@@ -21,8 +22,8 @@ public class CrackedWall extends SmartSprite {
     }
 
     @Override
-    public void update() {
-        super.update();
+    public void update(Input input, LevelManager levelManager) {
+        super.update(input, levelManager);
     }
 
     @Override
