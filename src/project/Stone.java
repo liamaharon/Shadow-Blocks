@@ -2,8 +2,12 @@ package project;
 
 import org.newdawn.slick.SlickException;
 
-public class Stone extends Block {
-    public Stone (TileCoord pos) throws SlickException {
+import java.io.Serializable;
+
+public class Stone extends Block implements Serializable
+{
+    public Stone (TileCoord pos) throws SlickException
+    {
         super("res/stone.png", pos);
     }
 }

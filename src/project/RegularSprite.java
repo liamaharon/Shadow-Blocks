@@ -3,9 +3,13 @@ package project;
 import org.newdawn.slick.Image;
 import org.newdawn.slick.SlickException;
 
-public abstract class RegularSprite implements Renderable
+import java.io.Serializable;
+
+public abstract class RegularSprite implements Renderable, Serializable
 {
-    private Image img;
+    // mark transient because slick's Image isn't serializable and we aren't
+    // allowed to use any other libraries to help us handle it.. :(
+    private transient Image img;
     private TileCoord pos;
 
     public RegularSprite(String src, TileCoord pos) throws SlickException
@@ -15,7 +19,7 @@ public abstract class RegularSprite implements Renderable
     }
 
     public void render(TileCoord levelDimensions) {
-       drawToScreen(img, pos, levelDimensions);
+        drawToScreen(img, pos, levelDimensions);
     }
 
     public TileCoord getPos() {

@@ -1,8 +1,9 @@
 package project;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class GameState
+public class GameState implements Serializable
 {
     private List<SmartSprite> smartSprites;
     private List<List<CrackedWall>> crackedWalls;

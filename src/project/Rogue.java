@@ -3,14 +3,19 @@ package project;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
-public class Rogue extends Baddie {
+import java.io.Serializable;
 
-    public Rogue(TileCoord pos) throws SlickException {
+public class Rogue extends Baddie implements Serializable
+{
+
+    public Rogue(TileCoord pos) throws SlickException
+    {
         super("res/rogue.png", pos);
     }
 
     @Override
-    public void update(Input input, LevelManager levelManager) {
+    public void update(Input input, LevelManager levelManager)
+    {
         super.update(input, levelManager);
     }
 }

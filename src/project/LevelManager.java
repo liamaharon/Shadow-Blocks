@@ -2,7 +2,11 @@ package project;
 
 import org.newdawn.slick.Input;
 
-import java.util.ArrayList;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.LinkedList;
 import java.util.List;
 
 public class LevelManager
@@ -15,9 +19,8 @@ public class LevelManager
     private List<RegularSprite> regularSprites;
     private TileCoord switchCoord;
     private TileCoord doorCoord;
-    private List<GameState> gameStates;
+    private LinkedList<GameState> gameStates;
     private GameState curGameState;
-
 
     public LevelManager(TileCoord levelDimensions,
                         List<List<Boolean>> permBlockedTiles,
@@ -28,7 +31,6 @@ public class LevelManager
                         TileCoord doorCoord,
                         GameState initialGameState)
     {
-
         this.levelDimensions = levelDimensions;
         this.permBlockedTiles = permBlockedTiles;
         this.targetTiles = targetTiles;
@@ -37,12 +39,54 @@ public class LevelManager
         this.switchCoord = switchCoord;
         this.doorCoord = doorCoord;
 
-        gameStates = new ArrayList<>();
-        gameStates.add(initialGameState);
+        gameStates = new LinkedList<>();
+        gameStates.addLast(initialGameState);
         // need to set these here because the initial render call is made
         // before curGameState is initially set in update()
         curGameState = initialGameState;
         movesMade = 0;
+    }
+
+    public void saveState()
+    {
+        // first, make a deep copy of the latest gameState (curGameState)
+        // credit to https://alvinalexander.com/java/java-deep-clone-example-source-code
+        // for showing how to deep copy with serialization
+        try
+        {
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            ObjectOutputStream oos = new ObjectOutputStream(baos);
+            oos.writeObject(curGameState);
+            ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
+            ObjectInputStream ois = new ObjectInputStream(bais);
+            GameState nextGameState = (GameState) ois.readObject();
+            // now that we have the new gameState, assign it as our latest one
+            // by pushing it onto the end of our gameStates list. updating
+            // curGameState & movesMade is all handled in the update method
+            gameStates.addLast(nextGameState);
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
+    }
+
+    // pops the last item off gameStates, so curGameState will be reverted
+    // to the point right before the last save was made (if there are saves
+    // available to undo)
+    private void undoState()
+    {
+        if (movesMade > 0 && gameStates.size() > 0) gameStates.removeLast();
+    }
+
+    // takes a copy of the initial state, remove everything from gameStates and
+    // reassign only the initial state, reverting the state back to how it was
+    // when the level was initially loaded
+    private void restartLevel()
+    {
+        GameState initialState = gameStates.getFirst();
+//        gameStates.clear();
+        gameStates.add(initialState);
     }
 
     public boolean isBlocked (TileCoord pos)
@@ -64,9 +108,12 @@ public class LevelManager
 
     public void update(Input input)
     {
+        // handle user wanting to undo or restart the level
+        if (input.isKeyPressed(Input.KEY_Z)) undoState();
+        if (input.isKeyPressed(Input.KEY_R)) restartLevel();
         // set curGameState to the most recent version & movesMade,
         // update current SmartSprites
-        curGameState = gameStates.get(gameStates.size()-1);
+        curGameState = gameStates.getLast();
         movesMade = gameStates.size()-1;
         for (SmartSprite smartSprite : curGameState.getSmartSprites())
         {

@@ -2,7 +2,9 @@ package project;
 
 import org.newdawn.slick.SlickException;
 
-public abstract class Block extends SmartSprite
+import java.io.Serializable;
+
+public abstract class Block extends SmartSprite implements Serializable
 {
     boolean isCoveringTarget;
 

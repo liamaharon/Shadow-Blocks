@@ -1,6 +1,8 @@
 package project;
 
-public class TileCoord implements Comparable<TileCoord>
+import java.io.Serializable;
+
+public class TileCoord implements Comparable<TileCoord>, Serializable
 {
     private int x;
     private int y;
