@@ -12,13 +12,28 @@ public class Player extends SmartSprite implements Serializable
         super("res/player_left.png", pos);
     }
 
-    // move player to a new position in the world if the tile is free
+
+
+    // save game and move the player
     private void move(TileCoord desiredPos, LevelManager levelManager)
     {
-        if (levelManager.isBlocked(desiredPos)) return;
-        // tile is free, save and move
         levelManager.saveState();
         setPos(desiredPos);
+    }
+    // handle a user trying to move the player
+    private void tryMove(TileCoord desiredPos, LevelManager levelManager, Direction dir)
+    {
+        // if the tile the user is moving to is blocked, do nothing
+        if (levelManager.isBlocked(desiredPos)) return;
+        // check if there's a tile in our desired position that is able to be
+        // pushed in the direction we're going
+        SmartSprite tileToPush = LevelManager.getPushableTile(desiredPos, dir);
+        // move, pushing a tile out of the way if there's one there
+        if (tileToPush != null)
+        {
+            tileToPush.move(desiredPos);
+        }
+        move(desiredPos, levelManager);
     }
 
     @Override
@@ -28,22 +43,22 @@ public class Player extends SmartSprite implements Serializable
         if (input.isKeyPressed(Input.KEY_UP))
         {
             desiredPos = new TileCoord(getPos().getX(), getPos().getY()-1);
-            move(desiredPos, levelManager);
+            tryMove(desiredPos, levelManager, Direction.UP);
         }
         else if (input.isKeyPressed(Input.KEY_DOWN))
         {
             desiredPos = new TileCoord(getPos().getX(), getPos().getY()+1);
-            move(desiredPos, levelManager);
+            tryMove(desiredPos, levelManager, Direction.DOWN);
         }
         else if (input.isKeyPressed(Input.KEY_LEFT))
         {
             desiredPos = new TileCoord(getPos().getX()-1, getPos().getY());
-            move(desiredPos, levelManager);
+            tryMove(desiredPos, levelManager, Direction.LEFT);
         }
         else if (input.isKeyPressed(Input.KEY_RIGHT))
         {
             desiredPos = new TileCoord(getPos().getX()+1, getPos().getY());
-            move(desiredPos, levelManager);
+            tryMove(desiredPos, levelManager, Direction.RIGHT);
         }
     }
 }

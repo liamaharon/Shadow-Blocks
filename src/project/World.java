@@ -11,7 +11,8 @@ public class World {
     private LevelManager curLevelManager;
     private int curLevelIndex = 0;
 
-    public World() throws SlickException {
+    public World() throws SlickException
+    {
         // load in level files
         levels = Loader.getSortedLevels();
 
@@ -25,7 +26,8 @@ public class World {
     }
 
     // curLevelManager handles how it's rendered
-    public void render(Graphics g) {
+    public void render(Graphics g) throws SlickException
+    {
         curLevelManager.render();
     }
 }

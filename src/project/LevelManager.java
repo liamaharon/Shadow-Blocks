@@ -2,10 +2,6 @@ package project;
 
 import org.newdawn.slick.Input;
 
-import java.io.ByteArrayInputStream;
-import java.io.ByteArrayOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -47,49 +43,40 @@ public class LevelManager
         movesMade = 0;
     }
 
+    // take a copy of the current GameState and put it in the second last
+    // position in the linkedlist behind curGameState, effectively saving the
+    // game. also increment moves made.
     public void saveState()
     {
-        // first, make a deep copy of the latest gameState (curGameState)
-        // credit to https://alvinalexander.com/java/java-deep-clone-example-source-code
-        // for showing how to deep copy with serialization
-        try
-        {
-            ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            ObjectOutputStream oos = new ObjectOutputStream(baos);
-            oos.writeObject(curGameState);
-            ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
-            ObjectInputStream ois = new ObjectInputStream(bais);
-            GameState nextGameState = (GameState) ois.readObject();
-            // now that we have the new gameState, assign it as our latest one
-            // by pushing it onto the end of our gameStates list. updating
-            // curGameState & movesMade is all handled in the update method
-            gameStates.addLast(nextGameState);
-        }
-        catch (Exception e)
-        {
-            e.printStackTrace();
-        }
+        int indexToSave = gameStates.size()-1;
+        gameStates.add(indexToSave, DeepCopier.deepCopyGameState(curGameState));
+        movesMade++;
     }
 
-    // pops the last item off gameStates, so curGameState will be reverted
-    // to the point right before the last save was made (if there are saves
-    // available to undo)
+    // pops the last item off gameStates, sets the new tail to be the new
+    // curGameState, decrement movesMade
     private void undoState()
     {
-        if (movesMade > 0 && gameStates.size() > 0) gameStates.removeLast();
+        if (movesMade > 0 && gameStates.size() > 0)
+        {
+            gameStates.removeLast();
+            curGameState = gameStates.getLast();
+            movesMade--;
+        }
     }
 
-    // takes a copy of the initial state, remove everything from gameStates and
-    // reassign only the initial state, reverting the state back to how it was
-    // when the level was initially loaded
+    // set the curGameState to the initial GameState which is the first element
+    // in the linkedList, clear the list then read only the curGameState
+    // (initial state) effectively resetting the level back to it's initial state
     private void restartLevel()
     {
-        GameState initialState = gameStates.getFirst();
-//        gameStates.clear();
-        gameStates.add(initialState);
+        curGameState = gameStates.getFirst();
+        gameStates.clear();
+        gameStates.add(curGameState);
+        movesMade = 0;
     }
 
-    public boolean isBlocked (TileCoord pos)
+    public boolean isBlocked (TileCoord pos, Direction dir)
     {
         return  // check if blocked by permanent blockage
                 permBlockedTiles
@@ -104,6 +91,20 @@ public class LevelManager
                 doorCoord != null &&
                 doorCoord.equals(pos) &&
                 !curGameState.getSwitchIsCovered();
+                // check if blocked by a block that is itself blocked
+                // making it unpushable
+                getPushableTile(pos) != null &&
+                getPushableTile(nextPos) != null;
+    }
+
+    // returns a reference to a pushable tile in a coord. if one does not exist
+    // null is returned
+    public Block getPushableTile(TileCoord pos)
+    {
+        return curGameState
+                .getBlocks()
+                .get(pos.getX())
+                .get(pos.getY());
     }
 
     public void update(Input input)
@@ -111,10 +112,8 @@ public class LevelManager
         // handle user wanting to undo or restart the level
         if (input.isKeyPressed(Input.KEY_Z)) undoState();
         if (input.isKeyPressed(Input.KEY_R)) restartLevel();
-        // set curGameState to the most recent version & movesMade,
-        // update current SmartSprites
-        curGameState = gameStates.getLast();
-        movesMade = gameStates.size()-1;
+
+        // update our smartSprites
         for (SmartSprite smartSprite : curGameState.getSmartSprites())
         {
             smartSprite.update(input, this);
@@ -135,4 +134,3 @@ public class LevelManager
         }
     }
 }
-
