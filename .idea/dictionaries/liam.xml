@@ -4,6 +4,7 @@
       <w>coord</w>
       <w>mage</w>
       <w>renderable</w>
+      <w>unpushable</w>
     </words>
   </dictionary>
 </component>

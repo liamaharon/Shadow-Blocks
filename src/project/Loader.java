@@ -11,13 +11,13 @@ import org.newdawn.slick.SlickException;
 
 public class Loader
 {
-    private static int [] worldDimensions;
     private static final File LEVELS_FOLDER = new File("res/levels");
 
     // Adapted from https://stackoverflow.com/a/42694706/7108044
     public static File[] getSortedLevels()
     {
         File[] levels = LEVELS_FOLDER.listFiles();
+        assert(levels != null);
         Arrays.sort(levels, new Comparator<File>()
         {
             @Override
@@ -169,8 +169,8 @@ public class Loader
         {
             e.printStackTrace();
         }
-        // finished organising all necessary information from level file, finally
-        // initialise a LevelManager an initial GameState for it!
+
+        System.out.println(nTargetTiles);
         TileCoord levelDimensions = new TileCoord(levelWidth, levelHeight);
         GameState initialGameState = new GameState(smartSprites,
                                                    crackedWalls,

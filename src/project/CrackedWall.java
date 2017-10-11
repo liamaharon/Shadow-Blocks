@@ -13,8 +13,8 @@ public class CrackedWall extends SmartSprite {
         isExploding = false;
     }
 
-    public void explode() {
-
+    public void explode(LevelManager levelManager) {
+        levelManager.removeSpriteFromCurGameState(this);
     }
 
     private void removeFromGame() {

@@ -20,20 +20,52 @@ public class Player extends SmartSprite implements Serializable
         levelManager.saveState();
         setPos(desiredPos);
     }
-    // handle a user trying to move the player
-    private void tryMove(TileCoord desiredPos, LevelManager levelManager, Direction dir)
+
+    // handle a user trying to move the player, resulting in nothing happening
+    // if the move is impossible or the player and potentially affected blocks
+    // also moving
+    private void tryMove(TileCoord desiredPos,
+                         LevelManager levelManager,
+                         Direction dir)
     {
-        // if the tile the user is moving to is blocked, do nothing
-        if (levelManager.isBlocked(desiredPos)) return;
+        // Player sprites are always blocked by cracked walls, closed doors,
+        // and walls. if blocked by any of these, do nothing.
+        if (
+                levelManager.tileIsBlockedByWall(desiredPos) ||
+                levelManager.getCrackedWall(desiredPos) != null ||
+                levelManager.tileIsBlockedByDoor(desiredPos)
+            ) return;
+
+        // calculate the position of the second tile over from where the player
+        // is trying to move. this is the position a pushable block would be
+        // moved to if it exists at desiredPos
+        TileCoord secondTileOverPos = null;
+        switch(dir)
+        {
+            case UP: secondTileOverPos = new TileCoord(desiredPos.getX(), desiredPos.getY()-1); break;
+            case DOWN: secondTileOverPos = new TileCoord(desiredPos.getX(), desiredPos.getY()+1); break;
+            case LEFT: secondTileOverPos = new TileCoord(desiredPos.getX()-1, desiredPos.getY()); break;
+            case RIGHT: secondTileOverPos = new TileCoord(desiredPos.getX()+1, desiredPos.getY()); break;
+        }
         // check if there's a tile in our desired position that is able to be
         // pushed in the direction we're going
-        SmartSprite tileToPush = LevelManager.getPushableTile(desiredPos, dir);
-        // move, pushing a tile out of the way if there's one there
+        Block tileToPush = levelManager.getPushableTile(desiredPos);
+
+        // if a pushable tile is in our desired position but it can't move in
+        // the direction we want, do nothing
+        if (
+                tileToPush != null &&
+                !tileToPush.canMoveTo(secondTileOverPos, levelManager)
+           ) return;
+
+        // at this point in we're able to move, either because nothing is in
+        // the path of the player or a block is there but we can move it out
+        // of the way. move the player, and move a block if there's one there
+        move(desiredPos, levelManager);
         if (tileToPush != null)
         {
-            tileToPush.move(desiredPos);
+            tileToPush.move(secondTileOverPos, levelManager);
         }
-        move(desiredPos, levelManager);
     }
 
     @Override
