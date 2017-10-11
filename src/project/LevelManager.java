@@ -2,6 +2,7 @@ package project;
 
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
+import org.newdawn.slick.SlickException;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -171,7 +172,14 @@ public class LevelManager
         }
     }
 
-    public void update(Input input)
+    // creates a new explosion at a given position and adds it to the
+    // curGameState smartSprites
+    public void createExplosion(TileCoord pos) throws SlickException
+    {
+        curGameState.getSmartSprites().add(new Explosion(pos));
+    }
+
+    public void update(Input input) throws SlickException
     {
         // handle user wanting to undo or restart the level
         if (input.isKeyPressed(Input.KEY_Z)) undoState();

@@ -10,11 +10,11 @@ public abstract class RegularSprite implements Renderable, Serializable
     // mark transient because slick's Image isn't serializable and we aren't
     // allowed to use any other libraries to help us handle it.. :( need to
     // reassign img when made null in the Copier class
-    private transient Image img;
+    public transient Image img;
     private String imgSrc;
     private TileCoord pos;
 
-    public RegularSprite(String imgSrc,TileCoord pos) throws SlickException {
+    public RegularSprite(String imgSrc, TileCoord pos) throws SlickException {
         this.imgSrc = imgSrc;
         img = new Image(imgSrc);
         this.pos = pos;

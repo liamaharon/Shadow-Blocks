@@ -12,7 +12,7 @@ public class Tnt extends Block {
     // cracked wall, in which case it explodes both itself and the cracked wall
     // a cracked wall in it it explodes both itself and the cracked wall
     @Override
-    public void move(TileCoord newPos, LevelManager levelManager)
+    public void move(TileCoord newPos, LevelManager levelManager) throws SlickException
     {
         // moving into a cracked wall, explode wall and remove self from game
         if (levelManager.getCrackedWall(newPos) != null)

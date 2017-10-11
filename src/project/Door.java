@@ -12,7 +12,8 @@ public class Door extends SmartSprite {
     }
 
     @Override
-    public void update(Input input, LevelManager levelManager) {
+    public void update(Input input, LevelManager levelManager) throws SlickException
+    {
         super.update(input, levelManager);
     }
 

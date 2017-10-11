@@ -14,7 +14,7 @@ public class Rogue extends Baddie implements Serializable
     }
 
     @Override
-    public void update(Input input, LevelManager levelManager)
+    public void update(Input input, LevelManager levelManager) throws SlickException
     {
         super.update(input, levelManager);
     }

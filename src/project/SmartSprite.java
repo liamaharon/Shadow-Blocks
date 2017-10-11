@@ -13,7 +13,7 @@ public abstract class SmartSprite extends RegularSprite implements Serializable
         super(src, pos);
     }
 
-    public void update(Input input, LevelManager levelManager)
+    public void update(Input input, LevelManager levelManager) throws SlickException
     {
 
     }

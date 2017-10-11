@@ -6,6 +6,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.lang.*;
+import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.newdawn.slick.SlickException;
 
@@ -90,7 +91,9 @@ public class Loader
         TileCoord doorCoord = null;
 
         // attributes to initialise LevelManager's initial GameState
-        List<SmartSprite> smartSprites = new ArrayList<>();
+        // smartSprites needs to be CopyOnWrite because it can be modified
+        // during traversal, for example removing an explosion effect.
+        List<SmartSprite> smartSprites = new CopyOnWriteArrayList<>();
         List<List<CrackedWall>> crackedWalls = new ArrayList<>();
         List<List<Block>> blocks = new ArrayList<>();
         TileCoord playerCoord = null;

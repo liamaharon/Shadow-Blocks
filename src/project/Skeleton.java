@@ -10,9 +10,4 @@ public class Skeleton extends Baddie {
         super("res/skull.png", pos);
         directionMoving = Direction.UP;
     }
-
-    @Override
-    public void update(Input input, LevelManager levelManager) {
-        super.update(input, levelManager);
-    }
 }

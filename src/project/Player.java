@@ -26,7 +26,7 @@ public class Player extends SmartSprite implements Serializable
     // also moving
     private void tryMove(TileCoord desiredPos,
                          LevelManager levelManager,
-                         Direction dir)
+                         Direction dir) throws SlickException
     {
         // Player sprites are always blocked by cracked walls, closed doors,
         // and walls. if blocked by any of these, do nothing.
@@ -69,7 +69,7 @@ public class Player extends SmartSprite implements Serializable
     }
 
     @Override
-    public void update(Input input, LevelManager levelManager)
+    public void update(Input input, LevelManager levelManager) throws SlickException
     {
         TileCoord desiredPos;
         if (input.isKeyPressed(Input.KEY_UP))
