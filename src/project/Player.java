@@ -64,7 +64,7 @@ public class Player extends SmartSprite implements Serializable
         move(desiredPos, levelManager);
         if (tileToPush != null)
         {
-            tileToPush.move(secondTileOverPos, levelManager);
+            tileToPush.move(secondTileOverPos, dir, levelManager);
         }
     }
 

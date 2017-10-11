@@ -12,7 +12,9 @@ public abstract class Block extends SmartSprite implements Serializable
     }
 
     // update the curGameState 2D lookup list and set the block a new pos
-    public void move(TileCoord newPos, LevelManager levelManager) throws SlickException
+    public void move(TileCoord newPos,
+                     Direction dir,
+                     LevelManager levelManager) throws SlickException
     {
         levelManager.updateCurState2DBlocksList(this.getPos(), newPos);
         setPos(newPos);
