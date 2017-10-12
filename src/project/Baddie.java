@@ -29,14 +29,14 @@ public abstract class Baddie extends SmartSprite
     @Override
     public void update(LevelManager levelManager, Input input, int delta) throws SlickException
     {
-        attack(levelManager);
+        attack(getPos(), levelManager);
     }
 
     // baddies are constantly trying to 'attack' the Player. this means if the
     // baddie is at the same position as the Player, the level should restart
-    private void attack(LevelManager levelManager)
+    public void attack(TileCoord pos, LevelManager levelManager)
     {
-        if (levelManager.getCurGameState().getPlayerCoord().equals(getPos()))
+        if (levelManager.getCurGameState().getPlayerCoord().equals(pos))
         {
             levelManager.restartLevel();
         }

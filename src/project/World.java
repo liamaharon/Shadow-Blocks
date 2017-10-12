@@ -9,18 +9,14 @@ import org.newdawn.slick.SlickException;
 public class World {
     private File[] levels;
     private LevelManager curLevelManager;
-    private int curLevelIndex = 4;
+    private int curLevelIndex = 1;
 
     public World() throws SlickException
     {
         // load in level files
         levels = Loader.getSortedLevels();
-        for (File lvl : levels)
-        {
-            System.out.println(lvl.getName());
-        }
 
-        // load up the first level!
+        // load up the first level
         curLevelManager = Loader.loadLevel(levels[curLevelIndex]);
     }
 

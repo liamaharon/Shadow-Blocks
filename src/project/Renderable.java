@@ -19,13 +19,13 @@ public interface Renderable {
                 // if the sprite has a weird size (looking at you, TNT) make it
                 // move the ratio of its size relative to the grid fwd or back
                 // so it is aligned
-                (img.getWidth() / App.TILE_SIZE * App.TILE_SIZE);
+                ((img.getWidth() - App.TILE_SIZE) / App.TILE_SIZE * App.TILE_SIZE);
 
         // do the same as xPixel, but on the y axis
         int yPixel = (pos.getY() * App.TILE_SIZE) +
                      (App.SCREEN_HEIGHT / 2) -
                      (worldDimensions.getY() * App.TILE_SIZE / 2) -
-                     (img.getHeight() / App.TILE_SIZE * App.TILE_SIZE);
+                     ((img.getHeight()-App.TILE_SIZE) / App.TILE_SIZE * App.TILE_SIZE);
 
         // finally draw the image to the screen!
         img.draw(xPixel, yPixel);

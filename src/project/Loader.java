@@ -191,11 +191,12 @@ public class Loader
                 Mage mage = (Mage) ss;
                 // remove mage from its position and append it to the back of
                 // the list
-                smartSprites.remove(ss);
-                smartSprites.add(ss);
+                smartSprites.remove(mage);
+                smartSprites.add(mage);
             }
         }
 
+        // setup and return our LevelManager
         TileCoord levelDimensions = new TileCoord(levelWidth, levelHeight);
         GameState initialGameState = new GameState(smartSprites,
                                                    crackedWalls,
