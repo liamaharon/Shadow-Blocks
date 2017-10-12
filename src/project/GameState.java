@@ -9,7 +9,7 @@ public class GameState implements Serializable
     private List<List<CrackedWall>> crackedWalls;
     private List<List<Block>> blocks;
     private TileCoord playerCoord;
-    private int nTargetTilesCovered;
+    private int nTargetTilesCovered = 0;
     private boolean switchIsCovered;
 
     public GameState(List<SmartSprite> smartSprites,
@@ -23,6 +23,14 @@ public class GameState implements Serializable
         this.blocks = blocks;
         this.playerCoord = playerCoord;
         this.switchIsCovered = playerCoord.equals(switchCoord);
+    }
+
+    public void incrementTargetTilesCovered() {
+        nTargetTilesCovered++;
+    }
+
+    public void decrementTargetTilesCovered() {
+        nTargetTilesCovered--;
     }
 
     public List<SmartSprite> getSmartSprites()
@@ -48,11 +56,6 @@ public class GameState implements Serializable
     public int getnTargetTilesCovered()
     {
         return nTargetTilesCovered;
-    }
-
-    public void setnTargetTilesCovered(int nTargetTilesCovered)
-    {
-        this.nTargetTilesCovered = nTargetTilesCovered;
     }
 
     public boolean getSwitchIsCovered()

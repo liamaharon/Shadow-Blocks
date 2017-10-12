@@ -1,6 +1,5 @@
 package project;
 
-import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
 public class Skeleton extends Baddie {

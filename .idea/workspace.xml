@@ -2,11 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e8d3b8f6-8d45-4740-88e9-3c8727c3cb2c" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/liam.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/liam.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/Block.java" afterPath="$PROJECT_DIR$/src/project/Block.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/Direction.java" afterPath="$PROJECT_DIR$/src/project/Direction.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/Door.java" afterPath="$PROJECT_DIR$/src/project/Door.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/Explosion.java" afterPath="$PROJECT_DIR$/src/project/Explosion.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/GameState.java" afterPath="$PROJECT_DIR$/src/project/GameState.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/IcyStone.java" afterPath="$PROJECT_DIR$/src/project/IcyStone.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/LevelManager.java" afterPath="$PROJECT_DIR$/src/project/LevelManager.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/Loader.java" afterPath="$PROJECT_DIR$/src/project/Loader.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/Player.java" afterPath="$PROJECT_DIR$/src/project/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/Skeleton.java" afterPath="$PROJECT_DIR$/src/project/Skeleton.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/SmartSprite.java" afterPath="$PROJECT_DIR$/src/project/SmartSprite.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/TileCoord.java" afterPath="$PROJECT_DIR$/src/project/TileCoord.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/Tnt.java" afterPath="$PROJECT_DIR$/src/project/Tnt.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/World.java" afterPath="$PROJECT_DIR$/src/project/World.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -29,8 +38,8 @@
           <file leaf-file-name="LevelManager.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/project/LevelManager.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="662">
-                  <caret line="207" column="0" lean-forward="false" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
+                <state relative-caret-position="162">
+                  <caret line="196" column="70" lean-forward="true" selection-start-line="196" selection-start-column="70" selection-end-line="196" selection-end-column="70" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -41,8 +50,8 @@
           <file leaf-file-name="Explosion.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/project/Explosion.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="450">
-                  <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+                <state relative-caret-position="414">
+                  <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -53,8 +62,8 @@
           <file leaf-file-name="IcyStone.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/project/IcyStone.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="445">
-                  <caret line="35" column="12" lean-forward="true" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
+                <state relative-caret-position="882">
+                  <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -62,21 +71,11 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Direction.java" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/project/Direction.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="72">
-                  <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
           <file leaf-file-name="Tnt.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/project/Tnt.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
-                  <caret line="10" column="54" lean-forward="false" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
+                <state relative-caret-position="216">
+                  <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
                   <folding />
                 </state>
               </provider>
@@ -85,8 +84,8 @@
           <file leaf-file-name="World.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/project/World.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="399">
-                  <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+                <state relative-caret-position="360">
+                  <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -97,7 +96,7 @@
           <file leaf-file-name="Rogue.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/project/Rogue.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="288">
+                <state relative-caret-position="234">
                   <caret line="16" column="84" lean-forward="false" selection-start-line="16" selection-start-column="84" selection-end-line="16" selection-end-column="84" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -106,14 +105,22 @@
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Skeleton.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Door.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/project/Door.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="342">
+                  <caret line="27" column="38" lean-forward="true" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+                  <folding />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Skeleton.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/project/Skeleton.java">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="216">
-                  <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
+                  <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+                  <folding />
                 </state>
               </provider>
             </entry>
@@ -121,7 +128,7 @@
           <file leaf-file-name="Mage.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/project/Mage.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="180">
+                <state relative-caret-position="162">
                   <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
@@ -144,11 +151,11 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="Player.java" pinned="false" current-in-tab="true">
+          <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/project/Player.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="162">
-                  <caret line="42" column="12" lean-forward="true" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+                <state relative-caret-position="576">
+                  <caret line="35" column="14" lean-forward="false" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -159,8 +166,8 @@
           <file leaf-file-name="Block.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/project/Block.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="288">
-                  <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
+                <state relative-caret-position="333">
+                  <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -171,24 +178,21 @@
           <file leaf-file-name="GameState.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/project/GameState.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
+                <state relative-caret-position="440">
+                  <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <element signature="e#986#987#0" expanded="true" />
-                    <element signature="e#1021#1022#0" expanded="true" />
-                    <element signature="method#setnTargetTilesCovered#0;class#GameState#0" expanded="false" />
                     <element signature="method#setSwitchIsCovered#0;class#GameState#0" expanded="false" />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="Loader.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="Loader.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/project/Loader.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="306">
-                  <caret line="94" column="69" lean-forward="false" selection-start-line="94" selection-start-column="69" selection-end-line="94" selection-end-column="69" />
+                <state relative-caret-position="-923">
+                  <caret line="126" column="20" lean-forward="false" selection-start-line="126" selection-start-column="20" selection-end-line="126" selection-end-column="20" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -199,11 +203,10 @@
           <file leaf-file-name="LevelManager.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/project/LevelManager.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1764">
+                <state relative-caret-position="531">
                   <caret line="100" column="4" lean-forward="false" selection-start-line="100" selection-start-column="4" selection-end-line="100" selection-end-column="4" />
                   <folding>
                     <element signature="imports" expanded="true" />
-                    <marker date="1507694786312" expanded="true" signature="3108:3245" ph="{...}" />
                   </folding>
                 </state>
               </provider>
@@ -212,8 +215,8 @@
           <file leaf-file-name="SmartSprite.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/project/SmartSprite.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="360">
-                  <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+                <state relative-caret-position="198">
+                  <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -224,8 +227,8 @@
           <file leaf-file-name="RegularSprite.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/project/RegularSprite.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="216">
-                  <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
+                <state relative-caret-position="162">
+                  <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
@@ -249,6 +252,8 @@
   <component name="FindInProjectRecents">
     <findStrings>
       <find>inita</find>
+      <find>.equals</find>
+      <find>System.out.</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -302,28 +307,28 @@
         <option value="$PROJECT_DIR$/src/project/Movable.java" />
         <option value="$PROJECT_DIR$/src/project/App.java" />
         <option value="$PROJECT_DIR$/src/project/Renderer.java" />
-        <option value="$PROJECT_DIR$/src/project/TileCoord.java" />
         <option value="$PROJECT_DIR$/src/project/Stone.java" />
         <option value="$PROJECT_DIR$/src/project/DeepCopier.java" />
-        <option value="$PROJECT_DIR$/src/project/GameState.java" />
-        <option value="$PROJECT_DIR$/src/project/World.java" />
-        <option value="$PROJECT_DIR$/src/project/Tnt.java" />
-        <option value="$PROJECT_DIR$/src/project/SmartSprite.java" />
         <option value="$PROJECT_DIR$/src/project/CrackedWall.java" />
-        <option value="$PROJECT_DIR$/src/project/Door.java" />
         <option value="$PROJECT_DIR$/src/project/Baddie.java" />
         <option value="$PROJECT_DIR$/src/project/Rogue.java" />
-        <option value="$PROJECT_DIR$/src/project/Skeleton.java" />
         <option value="$PROJECT_DIR$/src/project/Mage.java" />
-        <option value="$PROJECT_DIR$/src/project/Loader.java" />
-        <option value="$PROJECT_DIR$/src/project/LevelManager.java" />
         <option value="$PROJECT_DIR$/src/project/RegularSprite.java" />
         <option value="$PROJECT_DIR$/src/project/Explosion.java" />
         <option value="$PROJECT_DIR$/src/project/Renderable.java" />
-        <option value="$PROJECT_DIR$/src/project/Player.java" />
-        <option value="$PROJECT_DIR$/src/project/Block.java" />
-        <option value="$PROJECT_DIR$/src/project/IcyStone.java" />
         <option value="$PROJECT_DIR$/src/project/Direction.java" />
+        <option value="$PROJECT_DIR$/src/project/SmartSprite.java" />
+        <option value="$PROJECT_DIR$/src/project/Player.java" />
+        <option value="$PROJECT_DIR$/src/project/Tnt.java" />
+        <option value="$PROJECT_DIR$/src/project/IcyStone.java" />
+        <option value="$PROJECT_DIR$/src/project/TileCoord.java" />
+        <option value="$PROJECT_DIR$/src/project/Door.java" />
+        <option value="$PROJECT_DIR$/src/project/GameState.java" />
+        <option value="$PROJECT_DIR$/src/project/LevelManager.java" />
+        <option value="$PROJECT_DIR$/src/project/Block.java" />
+        <option value="$PROJECT_DIR$/src/project/Skeleton.java" />
+        <option value="$PROJECT_DIR$/src/project/Loader.java" />
+        <option value="$PROJECT_DIR$/src/project/World.java" />
       </list>
     </option>
   </component>
@@ -357,7 +362,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -385,8 +391,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="AndroidView" />
     </panes>
   </component>
@@ -395,7 +400,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
-    <property name="SearchEverywhereHistoryKey" value="direc&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Direction.java&#10;PLa&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Player.java&#10;block&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Block.java&#10;Render&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Renderable.java&#10;render&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Renderable.java&#10;Reg&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/RegularSprite.java&#10;smart&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/SmartSprite.java&#10;level&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/LevelManager.java&#10;ex&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/res/explosion.png&#10;crac&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/CrackedWall.java&#10;tnt&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Tnt.java&#10;Ex&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Explosion.java&#10;exxp&#9;null&#9;null&#10;Load&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Loader.java&#10;Sma&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/SmartSprite.java&#10;Leve&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/LevelManager.java&#10;cracked&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/CrackedWall.java&#10;deep&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/DeepCopier.java&#10;cracj&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/CrackedWall.java&#10;Crac&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/CrackedWall.java&#10;Tnt&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Tnt.java&#10;world&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/World.java&#10;game&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/GameState.java&#10;reg&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/RegularSprite.java&#10;stone&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Stone.java&#10;re&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Renderable.java&#10;Image&#9;PSI&#9;JAVA://org.newdawn.slick.Image&#10;regul&#9;PSI&#9;JAVA://project.RegularSprite&#10;Regu&#9;PSI&#9;JAVA://project.RegularSprite&#10;Smar&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/SmartSprite.java&#10;Block&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Block.java&#10;Tilec&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/TileCoord.java&#10;Stone&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Stone.java&#10;player&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Player.java&#10;Player&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Player.java&#10;World&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/World.java&#10;Regular&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/RegularSprite.java&#10;Game&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/GameState.java&#10;ske&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project1/Skeleton.java&#10;Rou&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project1/Rouge.java&#10;Ti&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project1/TileCoord.java&#10;0.&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/res/levels/0.lvl&#10;levels&#9;PSI&#9;JAVA://project1.World#levels" />
+    <property name="SearchEverywhereHistoryKey" value="Ske&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Skeleton.java&#10;world&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/World.java&#10;Load&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Loader.java&#10;Wor&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/World.java&#10;Leve&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/LevelManager.java&#10;door&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Door.java&#10;level&#9;PSI&#9;JAVA://project.LevelManager&#10;GameS&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/GameState.java&#10;Level&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/LevelManager.java&#10;Icy&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/IcyStone.java&#10;LM&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/LevelManager.java&#10;TIle&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/TileCoord.java&#10;World&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/World.java&#10;Ic&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/IcyStone.java&#10;Block&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Block.java&#10;smartS&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/SmartSprite.java&#10;Play&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Player.java&#10;Sma&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/SmartSprite.java&#10;Pla&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Player.java&#10;Smar&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/SmartSprite.java&#10;direc&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Direction.java&#10;PLa&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Player.java&#10;block&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Block.java&#10;Render&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Renderable.java&#10;render&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Renderable.java&#10;Reg&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/RegularSprite.java&#10;smart&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/SmartSprite.java&#10;ex&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/res/explosion.png&#10;crac&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/CrackedWall.java&#10;tnt&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Tnt.java&#10;Ex&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Explosion.java&#10;exxp&#9;null&#9;null&#10;cracked&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/CrackedWall.java&#10;deep&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/DeepCopier.java&#10;cracj&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/CrackedWall.java&#10;Crac&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/CrackedWall.java&#10;Tnt&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Tnt.java&#10;game&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/GameState.java&#10;reg&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/RegularSprite.java&#10;stone&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Stone.java&#10;re&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Renderable.java&#10;Image&#9;PSI&#9;JAVA://org.newdawn.slick.Image&#10;regul&#9;PSI&#9;JAVA://project.RegularSprite&#10;Regu&#9;PSI&#9;JAVA://project.RegularSprite&#10;Tilec&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/TileCoord.java&#10;Stone&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Stone.java&#10;player&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Player.java&#10;Player&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Player.java&#10;Regular&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/RegularSprite.java&#10;Game&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/GameState.java" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -539,7 +544,8 @@
       <workItem from="1507540630834" duration="9851000" />
       <workItem from="1507590151711" duration="13357000" />
       <workItem from="1507634981975" duration="3245000" />
-      <workItem from="1507683629042" duration="13982000" />
+      <workItem from="1507683629042" duration="19292000" />
+      <workItem from="1507780072625" duration="2533000" />
     </task>
     <task id="LOCAL-00001" summary="Begun work on Project 2B">
       <created>1507358674516</created>
@@ -597,14 +603,21 @@
       <option name="project" value="LOCAL" />
       <updated>1507698830646</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Working on ice block">
+      <created>1507721285050</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1507721285050</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="95311000" />
+    <option name="totallyTimeSpent" value="103154000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="64" y="-11" width="1857" height="1092" extended-state="6" />
+    <frame x="64" y="-4" width="1857" height="1092" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -617,7 +630,6 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32417583" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.36707565" sideWeight="0.4983753" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991913" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -636,6 +648,7 @@
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Dynamic Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991913" sideWeight="0.5" order="9" side_tool="true" content_ui="tabs" />
     </layout>
     <layout-to-restore>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -684,14 +697,15 @@
     <MESSAGE value="Can move, undo, reset, track target tiles covered, complete levels" />
     <MESSAGE value="Got TNT exploding finished except for special effect" />
     <MESSAGE value="TNT explosion rendering where its supposed to now" />
-    <option name="LAST_COMMIT_MESSAGE" value="TNT explosion rendering where its supposed to now" />
+    <MESSAGE value="Working on ice block" />
+    <option name="LAST_COMMIT_MESSAGE" value="Working on ice block" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="9" />
+      <option name="time" value="12" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -849,14 +863,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/TileCoord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="15" lean-forward="false" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/Wall.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
@@ -883,14 +889,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/Door.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="24" column="0" lean-forward="true" selection-start-line="24" selection-start-column="0" selection-end-line="24" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/Baddie.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="234">
@@ -901,18 +899,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/Rogue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
+        <state relative-caret-position="234">
           <caret line="16" column="84" lean-forward="false" selection-start-line="16" selection-start-column="84" selection-end-line="16" selection-end-column="84" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/Skeleton.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -921,7 +909,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/Mage.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
+        <state relative-caret-position="162">
           <caret line="10" column="0" lean-forward="false" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -933,63 +921,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
           <caret line="966" column="0" lean-forward="false" selection-start-line="966" selection-start-column="0" selection-end-line="966" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/Loader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="94" column="69" lean-forward="false" selection-start-line="94" selection-start-column="69" selection-end-line="94" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/Tnt.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="54" lean-forward="false" selection-start-line="10" selection-start-column="54" selection-end-line="10" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/CrackedWall.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/SmartSprite.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="38" column="0" lean-forward="false" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/LevelManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="662">
-          <caret line="207" column="0" lean-forward="false" selection-start-line="207" selection-start-column="0" selection-end-line="207" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1008,8 +939,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/Explosion.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="8" lean-forward="false" selection-start-line="25" selection-start-column="8" selection-end-line="25" selection-end-column="8" />
+        <state relative-caret-position="414">
+          <caret line="23" column="8" lean-forward="false" selection-start-line="23" selection-start-column="8" selection-end-line="23" selection-end-column="8" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1018,52 +949,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/RegularSprite.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/GameState.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="22" column="9" lean-forward="false" selection-start-line="22" selection-start-column="9" selection-end-line="22" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#986#987#0" expanded="true" />
-            <element signature="e#1021#1022#0" expanded="true" />
-            <element signature="method#setnTargetTilesCovered#0;class#GameState#0" expanded="false" />
-            <element signature="method#setSwitchIsCovered#0;class#GameState#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/Block.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="16" column="20" lean-forward="false" selection-start-line="16" selection-start-column="20" selection-end-line="16" selection-end-column="20" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/IcyStone.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="35" column="12" lean-forward="true" selection-start-line="35" selection-start-column="12" selection-end-line="35" selection-end-column="12" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
-          <caret line="42" column="12" lean-forward="true" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
+          <caret line="12" column="31" lean-forward="false" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1072,8 +959,129 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/project/Direction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
+        <state relative-caret-position="108">
+          <caret line="6" column="0" lean-forward="true" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Player.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="576">
+          <caret line="35" column="14" lean-forward="false" selection-start-line="35" selection-start-column="14" selection-end-line="35" selection-end-column="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/SmartSprite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Tnt.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/TileCoord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="450">
+          <caret line="25" column="0" lean-forward="true" selection-start-line="25" selection-start-column="0" selection-end-line="25" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/CrackedWall.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/IcyStone.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="882">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Door.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="27" column="38" lean-forward="true" selection-start-line="27" selection-start-column="38" selection-end-line="27" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/GameState.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="440">
+          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="method#setSwitchIsCovered#0;class#GameState#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/LevelManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="196" column="70" lean-forward="true" selection-start-line="196" selection-start-column="70" selection-end-line="196" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Block.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="333">
+          <caret line="27" column="0" lean-forward="false" selection-start-line="27" selection-start-column="0" selection-end-line="27" selection-end-column="0" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Loader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-923">
+          <caret line="126" column="20" lean-forward="false" selection-start-line="126" selection-start-column="20" selection-end-line="126" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="4" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Skeleton.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
           <folding />
         </state>
       </provider>

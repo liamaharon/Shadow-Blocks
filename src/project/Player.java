@@ -34,19 +34,12 @@ public class Player extends SmartSprite implements Serializable
                 levelManager.tileIsBlockedByWall(desiredPos) ||
                 levelManager.getCrackedWall(desiredPos) != null ||
                 levelManager.tileIsBlockedByDoor(desiredPos)
-            ) return;
+           ) return;
 
         // calculate the position of the second tile over from where the player
         // is trying to move. this is the position a pushable block would be
         // moved to if it exists at desiredPos
-        TileCoord secondTileOverPos = null;
-        switch(dir)
-        {
-            case UP: secondTileOverPos = new TileCoord(desiredPos.getX(), desiredPos.getY()-1); break;
-            case DOWN: secondTileOverPos = new TileCoord(desiredPos.getX(), desiredPos.getY()+1); break;
-            case LEFT: secondTileOverPos = new TileCoord(desiredPos.getX()-1, desiredPos.getY()); break;
-            case RIGHT: secondTileOverPos = new TileCoord(desiredPos.getX()+1, desiredPos.getY()); break;
-        }
+        TileCoord secondTileOverPos = getSecondTileOver(desiredPos, dir);
         // check if there's a tile in our desired position that is able to be
         // pushed in the direction we're going
         Block tileToPush = levelManager.getPushableTile(desiredPos);

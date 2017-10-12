@@ -11,8 +11,6 @@ public class Explosion extends SmartSprite {
         super("res/explosion.png", pos);
         // take note of the UNIX time in ms that we want to remove the
         // explosion from existence
-        System.out.println(this.img.getHeight());
-        System.out.println(this.img.getWidth());
         final int POINT_FOUR_SECONDS_IN_MS = 400;
         expireTime = System.currentTimeMillis() + POINT_FOUR_SECONDS_IN_MS;
     }

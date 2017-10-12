@@ -2,7 +2,7 @@ package project;
 
 import java.io.Serializable;
 
-public class TileCoord implements Comparable<TileCoord>, Serializable
+public class TileCoord implements Serializable
 {
     private int x;
     private int y;
@@ -13,15 +13,15 @@ public class TileCoord implements Comparable<TileCoord>, Serializable
         this.y = y;
     }
 
+    // TileCoords are equal if their x and y values are equal.
+    // also ensure the object passed is not null, and is in fact a TileCoord
     @Override
-    public int compareTo(TileCoord anotherTileCoord)
+    public boolean equals(Object obj)
     {
-        if (this.x == anotherTileCoord.getX() &&
-            this.getY() == anotherTileCoord.getY())
-        {
-            return 0;
-        }
-        return -1;
+        if(obj == null) return false;
+        else if (!(obj instanceof TileCoord)) return false;
+        else return getY() == ((TileCoord) obj).getY() &&
+                    getX() == ((TileCoord) obj).getX();
     }
 
     public int getX()

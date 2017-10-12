@@ -97,6 +97,7 @@ public class Loader
         List<List<CrackedWall>> crackedWalls = new ArrayList<>();
         List<List<Block>> blocks = new ArrayList<>();
         TileCoord playerCoord = null;
+        Player playerSprite = null;
 
         try (BufferedReader br = new BufferedReader(new FileReader(levelPath)))
         {
@@ -123,7 +124,12 @@ public class Loader
 
                 if (curSprite instanceof  Player)
                 {
+                    // when we find the player store its coords and continue
+                    // before it gets added to the smartSprite list. see ln
+                    // 182 for explanation.
                     playerCoord = curSprite.getPos();
+                    playerSprite = (Player) curSprite;
+                    continue;
                 }
                 else if (curSprite instanceof Switch)
                 {
@@ -173,7 +179,12 @@ public class Loader
             e.printStackTrace();
         }
 
-        System.out.println(nTargetTiles);
+        // because the game is saved right before a player moves, we need to
+        // ensure the player is the first smartSprite to update otherwise
+        // other sprites may update the same tick, before the save. making
+        // the player first in line to be updated ensures that no other sprite
+        // can update before a potential save needs to take place
+        smartSprites.add(0, playerSprite);
         TileCoord levelDimensions = new TileCoord(levelWidth, levelHeight);
         GameState initialGameState = new GameState(smartSprites,
                                                    crackedWalls,

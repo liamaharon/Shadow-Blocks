@@ -1,12 +1,12 @@
 package project;
 
+import org.lwjgl.Sys;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
 public class IcyStone extends Block {
-    private final int QUARTER_SECOND_IN_MS = 250;
     private Direction directionMoving = Direction.NONE;
-    private float timeLastMoved;
+    private double timeLastMoved;
 
     public IcyStone(TileCoord pos) throws SlickException
     {
@@ -30,12 +30,22 @@ public class IcyStone extends Block {
     public void update(Input input, LevelManager levelManager) throws SlickException
     {
         super.update(input, levelManager);
-        if (
-                directionMoving != Direction.NONE &&
-                timeLastMoved <= System.currentTimeMillis() - QUARTER_SECOND_IN_MS
-           )
+        final int QUARTER_SECOND_IN_MS = 250;
+        if (directionMoving != Direction.NONE &&
+            timeLastMoved <= System.currentTimeMillis() - QUARTER_SECOND_IN_MS)
         {
             // get the next position the ice wants to slide
+            TileCoord nextPos = getSecondTileOver(getPos(), directionMoving);
+            // if it can't move to that position, set its direction to NONE
+            if (!canMoveTo(nextPos, levelManager))
+            {
+                directionMoving = Direction.NONE;
+            }
+            // else, it can move to the new position, so move there!
+            else
+            {
+                move(nextPos, directionMoving, levelManager);
+            }
         }
     }
 }

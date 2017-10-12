@@ -1,5 +1,6 @@
 package project;
 
+import org.lwjgl.Sys;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
@@ -14,7 +15,6 @@ public class LevelManager
     private List<List<Boolean>> permBlockedTiles;
     private List<List<Boolean>> targetTiles;
     private int nTargetTiles;
-    private int nTargetTilesCovered = 0;
     private boolean levelComplete = false;
     private List<RegularSprite> regularSprites;
     private TileCoord switchCoord;
@@ -114,16 +114,9 @@ public class LevelManager
                 .get(pos.getY());
     }
 
-    public boolean tileIsTarget(TileCoord pos)
-    {
-        return targetTiles
-                .get(pos.getX())
-                .get(pos.getY()) != null;
-    }
-
     // move a block from one place to another in the current GameStates
-    // blocks 2D lookup array. also update the nTilesCovered if appropriate.
-    // if cur is null it means the block is being removed from the game
+    // blocks 2D lookup array. also update the nTilesCovered && switchIsCovered
+    // if required.
     public void updateCurState2DBlocksList(TileCoord prev, TileCoord cur)
     {
         // take a note of the block we're moving
@@ -147,8 +140,17 @@ public class LevelManager
         // handle if the block is moving on or off a target tile
         boolean targetTileAtPrev = targetTiles.get(prev.getX()).get(prev.getY());
         boolean targetTileAtCur = targetTiles.get(cur.getX()).get(cur.getY());
-        if (targetTileAtPrev && !targetTileAtCur) nTargetTilesCovered--;
-        if (targetTileAtCur && !targetTileAtPrev) nTargetTilesCovered++;
+        if (targetTileAtPrev && !targetTileAtCur) curGameState.decrementTargetTilesCovered();
+        if (targetTileAtCur && !targetTileAtPrev) curGameState.incrementTargetTilesCovered();
+
+        // if a switch exists, handle if the block is moving on or off the switch
+        if (switchCoord != null)
+        {
+            boolean switchAtPrev = switchCoord.equals(prev);
+            boolean switchAtCur = switchCoord.equals(cur);
+            if (switchAtPrev && !switchAtCur) curGameState.setSwitchIsCovered(false);
+            if (switchAtCur && !switchAtPrev) curGameState.setSwitchIsCovered(true);
+        }
     }
 
     // removes a smart sprite from the current game state
@@ -192,7 +194,7 @@ public class LevelManager
         }
 
         // check if user has completed the level
-        if (nTargetTiles == nTargetTilesCovered) levelComplete = true;
+        if (nTargetTiles == curGameState.getnTargetTilesCovered()) levelComplete = true;
     }
 
     public void render(Graphics graphics)
@@ -213,5 +215,7 @@ public class LevelManager
     public boolean getLevelComplete() {
         return levelComplete;
     }
+
+    public GameState getCurGameState() { return curGameState; }
 }
 

@@ -9,7 +9,7 @@ import org.newdawn.slick.SlickException;
 public class World {
     private File[] levels;
     private LevelManager curLevelManager;
-    private int curLevelIndex = 1;
+    private int curLevelIndex = 0;
 
     public World() throws SlickException
     {
