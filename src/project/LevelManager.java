@@ -1,5 +1,6 @@
 package project;
 
+import org.lwjgl.Sys;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
@@ -21,7 +22,7 @@ public class LevelManager
     private GameState initialGameState;
     private LinkedList<GameState> gameStates;
     private GameState curGameState;
-    private boolean playerMovedThisTick = false;
+    private Direction playerDirectionThisTick;
 
     public LevelManager(TileCoord levelDimensions,
                         List<List<Boolean>> permBlockedTiles,
@@ -110,6 +111,23 @@ public class LevelManager
                 !curGameState.getSwitchIsCovered();
     }
 
+    // returns if a tile is blocked by a pushable block that is itself blocked
+    public boolean tileIsBlockedByBlockedBlock(TileCoord pos, Direction dir)
+    {
+        // try get a block from the provided pos
+        Block blockAtPos = getBlockFromCoord(pos);
+        // if there's no block in the provided position, return false
+        if (blockAtPos == null) return false;
+
+        // get the position that is adjacent to the block, in the direction it's
+        // being pushed
+        TileCoord adjacentTileCoord = getAdjacentTileCoord(pos, dir);
+
+        // return if the block isn't able to move into the position adjacent to it,
+        // in the direction specified
+        return !blockAtPos.canMoveTo(adjacentTileCoord, this);
+    }
+
     // returns a reference to a pushable block in a coord. if one does not exist
     // null is returned
     public Block getBlockFromCoord(TileCoord pos)
@@ -118,6 +136,21 @@ public class LevelManager
                 .getBlocks()
                 .get(pos.getX())
                 .get(pos.getY());
+    }
+
+    // returns a TileCoord with position directly adjacent to the TileCoord
+    // input, in the direction specified
+    public TileCoord getAdjacentTileCoord(TileCoord pos, Direction dir)
+    {
+        switch(dir)
+        {
+            case UP: return new TileCoord(pos.getX(), pos.getY()-1);
+            case DOWN: return new TileCoord(pos.getX(), pos.getY()+1);
+            case LEFT: return new TileCoord(pos.getX()-1, pos.getY());
+            case RIGHT: return new TileCoord(pos.getX()+1, pos.getY());
+            case NONE: return pos;
+        }
+        return null;
     }
 
     // move a block from one place to another in the current GameStates
@@ -187,47 +220,72 @@ public class LevelManager
         curGameState.getSmartSprites().add(new Explosion(pos));
     }
 
+    // need to watch for player input before we update the sprites, as some
+    // sprites actions (rogue) depend on if a player will move before the
+    // player itself actually updates
+    private void watchForPlayerInput(Input input)
+    {
+        if (input.isKeyPressed(Input.KEY_UP))
+        {
+            playerDirectionThisTick = Direction.UP;
+            saveState();
+        }
+        else if (input.isKeyPressed(Input.KEY_DOWN))
+        {
+            playerDirectionThisTick = Direction.DOWN;
+            saveState();
+        }
+        else if (input.isKeyPressed(Input.KEY_LEFT))
+        {
+            playerDirectionThisTick = Direction.LEFT;
+            saveState();
+        }
+        else if (input.isKeyPressed(Input.KEY_RIGHT))
+        {
+            playerDirectionThisTick = Direction.RIGHT;
+            saveState();
+        }
+        else
+        {
+            playerDirectionThisTick = Direction.NONE;
+        }
+    }
+
     public void update(Input input, int delta) throws SlickException
     {
         // handle user wanting to undo or restart the level
         if (input.isKeyPressed(Input.KEY_Z)) undoState();
         if (input.isKeyPressed(Input.KEY_R)) restartLevel();
 
-        // update our smartSprites
+        // if our player has moved, save the game and set the player moved this
+        // tick flag before updating our smartSprites
+        watchForPlayerInput(input);
+
+        // now that we know if a player has moved or not, update our smartSprites
         for (SmartSprite smartSprite : curGameState.getSmartSprites())
         {
             smartSprite.update(this, input, delta);
         }
 
-        // reset playerMovedThisTick value
-        playerMovedThisTick = false;
-
         // check if user has completed the level
         if (nTargetTiles == curGameState.getnTargetTilesCovered()) levelComplete = true;
     }
 
-    public void render(Graphics graphics)
-    {
+    public void render(Graphics graphics) {
         // redraw RegularSprites that never update over the course of a level
-        for (RegularSprite regSprite : regularSprites)
-        {
+        for (RegularSprite regSprite : regularSprites) {
             regSprite.render(levelDimensions);
         }
         // redraw SmartSprites in the current GameState
-        for (SmartSprite smartSprite : curGameState.getSmartSprites())
-        {
+        for (SmartSprite smartSprite : curGameState.getSmartSprites()) {
             smartSprite.render(levelDimensions);
         }
         // draw moves made 10px down 10px right from the top left corner
         graphics.drawString("Moves: " + movesMade, 10, 10);
     }
 
-    public void setPlayerMovedThisTick(boolean playerMovedThisTick) {
-        this.playerMovedThisTick = playerMovedThisTick;
-    }
-
-    public boolean getPlayerMovedThisTick() {
-        return playerMovedThisTick;
+    public Direction getPlayerDirectionThisTick() {
+        return playerDirectionThisTick;
     }
 
     public boolean getLevelComplete() {

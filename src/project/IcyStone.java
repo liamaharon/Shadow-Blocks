@@ -36,13 +36,13 @@ public class IcyStone extends Block {
             msSinceLastMove >= QUARTER_SECOND_IN_MS)
         {
             // get the next position the ice wants to slide
-            TileCoord desiredPos = getSecondTileOver(getPos(), directionMoving);
+            TileCoord desiredPos = levelManager.getAdjacentTileCoord(getPos(), directionMoving);
             // if it can't move to that position, set its direction to NONE
             if (!canMoveTo(desiredPos, levelManager))
             {
                 directionMoving = Direction.NONE;
             }
-            // else, it can move to the new position, so move there!
+            // else, it can move to the new position, so move there
             else
             {
                 move(desiredPos, directionMoving, levelManager);

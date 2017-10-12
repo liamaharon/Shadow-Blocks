@@ -20,29 +20,41 @@ public abstract class SmartSprite extends RegularSprite implements Serializable
         setPos(pos);
     }
 
-    // returns a TileCoord with position directly adjacent to the TileCoord
-    // input, in the direction specified
-    public TileCoord getSecondTileOver(TileCoord pos, Direction dir)
-    {
-        switch(dir)
-        {
-            case UP: return new TileCoord(pos.getX(), pos.getY()-1);
-            case DOWN: return new TileCoord(pos.getX(), pos.getY()+1);
-            case LEFT: return new TileCoord(pos.getX()-1, pos.getY());
-            case RIGHT: return new TileCoord(pos.getX()+1, pos.getY());
-            case NONE: return pos;
-        }
-        return null;
-    }
-
     // returns if a SmartSprite can move to a certain position (isn't blocked)
-    // every SmartSprite is blocked by walls and closed doors
-    public boolean canMoveTo(TileCoord pos, LevelManager levelManager)
+    // every SmartSprite is blocked by walls and closed doors. can be called
+    // with or without direction the sprite is moving from.
+    public boolean canMoveTo(TileCoord pos,
+                             LevelManager levelManager)
     {
         return !(levelManager.tileIsBlockedByWall(pos) ||
-                 levelManager.tileIsBlockedByDoor(pos));
+                levelManager.tileIsBlockedByDoor(pos));
     }
-    public void update(LevelManager levelManager, Input input, int delta) throws SlickException
+
+    public boolean canMoveTo(TileCoord pos,
+                             Direction directionMovingFrom,
+                             LevelManager levelManager)
+    {
+        return !(levelManager.tileIsBlockedByWall(pos) ||
+                levelManager.tileIsBlockedByDoor(pos));
+    }
+
+    // looks for any blocks in a position, and pushes them in a specified
+    // direction if they exist there
+    public void push(TileCoord pos,
+                     Direction dir,
+                     LevelManager levelManager) throws SlickException
+    {
+        if (levelManager.getBlockFromCoord(pos) != null)
+        {
+            // get position to push the block
+            TileCoord posToPushTo = levelManager.getAdjacentTileCoord(pos, dir);
+            levelManager.getBlockFromCoord(pos).move(posToPushTo, dir, levelManager);
+        }
+    }
+
+    public  void update(LevelManager levelManager,
+                                Input input,
+                                int delta) throws SlickException
     {
 
     }

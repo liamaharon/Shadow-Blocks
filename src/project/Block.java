@@ -22,7 +22,8 @@ public abstract class Block extends SmartSprite implements Serializable
         super.move(newPos, dir, levelManager);
     }
 
-    // (most) blocks are also blocked by other blocks && cracked walls
+    // blocks are also blocked by other blocks && cracked walls
+    // (Tnt is an exception, and overrides this method_
     @Override
     public boolean canMoveTo(TileCoord pos, LevelManager levelManager)
     {

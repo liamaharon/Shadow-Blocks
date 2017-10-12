@@ -1,6 +1,5 @@
 package project;
 
-import org.lwjgl.Sys;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
@@ -18,6 +17,12 @@ public abstract class Baddie extends SmartSprite
     {
         return super.canMoveTo(pos, levelManager) ||
                levelManager.getCrackedWallFromCoord(pos) != null;
+    }
+    @Override
+    public boolean canMoveTo(TileCoord pos, Direction dir, LevelManager levelManager)
+    {
+        return super.canMoveTo(pos, levelManager) ||
+                levelManager.getCrackedWallFromCoord(pos) != null;
     }
 
     // baddies try to attack the player every update
