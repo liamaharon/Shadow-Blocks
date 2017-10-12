@@ -15,6 +15,10 @@ public class World {
     {
         // load in level files
         levels = Loader.getSortedLevels();
+        for (File lvl : levels)
+        {
+            System.out.println(lvl.getName());
+        }
 
         // load up the first level!
         curLevelManager = Loader.loadLevel(levels[curLevelIndex]);
@@ -22,8 +26,12 @@ public class World {
 
     private void nextLevel() throws SlickException
     {
-        curLevelIndex++;
-        curLevelManager = Loader.loadLevel(levels[curLevelIndex]);
+        // disallow trying to load a non-existent level
+        if (curLevelIndex < levels.length-1)
+        {
+            curLevelIndex++;
+            curLevelManager = Loader.loadLevel(levels[curLevelIndex]);
+        }
     }
 
     // continually update each sprite until level is completed

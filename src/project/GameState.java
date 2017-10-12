@@ -22,7 +22,10 @@ public class GameState implements Serializable
         this.crackedWalls = crackedWalls;
         this.blocks = blocks;
         this.playerCoord = playerCoord;
-        this.switchIsCovered = playerCoord.equals(switchCoord);
+        if (playerCoord != null)
+        {
+            this.switchIsCovered = playerCoord.equals(switchCoord);
+        }
     }
 
     public void incrementTargetTilesCovered() {

@@ -173,6 +173,29 @@ public class Loader
             e.printStackTrace();
         }
 
+        // because the Mage needs to be updated after the player, and it's loaded
+        // into the smartSprite list before the player, I rearrange the list
+        // here so the mage updates after the player. I understand I could
+        // have avoided needing to do this by simply manually telling the mage
+        // to move in my Player class, but I think this breaks encapsulation
+        // and would prefer that classes are not concerned with when each other
+        // need to move
+
+        // search through smartSprites for a Mage, if we find one move it to
+        // the end of the list behind Player
+        for (SmartSprite ss : smartSprites)
+        {
+            if (ss.getClass().getSimpleName().equals("Mage"))
+            {
+                // take a copy of the Mage
+                Mage mage = (Mage) ss;
+                // remove mage from its position and append it to the back of
+                // the list
+                smartSprites.remove(ss);
+                smartSprites.add(ss);
+            }
+        }
+
         TileCoord levelDimensions = new TileCoord(levelWidth, levelHeight);
         GameState initialGameState = new GameState(smartSprites,
                                                    crackedWalls,
