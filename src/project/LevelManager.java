@@ -1,6 +1,5 @@
 package project;
 
-import org.lwjgl.Sys;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
@@ -19,8 +18,10 @@ public class LevelManager
     private List<RegularSprite> regularSprites;
     private TileCoord switchCoord;
     private TileCoord doorCoord;
+    private GameState initialGameState;
     private LinkedList<GameState> gameStates;
     private GameState curGameState;
+    private boolean playerMovedThisTick = false;
 
     public LevelManager(TileCoord levelDimensions,
                         List<List<Boolean>> permBlockedTiles,
@@ -38,11 +39,14 @@ public class LevelManager
         this.regularSprites = regularSprites;
         this.switchCoord = switchCoord;
         this.doorCoord = doorCoord;
+        this.initialGameState = initialGameState;
 
-        // setup the initial gamestate!
+        // setup the gameState LinkedList!
         gameStates = new LinkedList<>();
-        gameStates.addLast(initialGameState);
-        curGameState = initialGameState;
+        // keep the initial GameState guaranteed pristine by never directly
+        // adding it to gameStates where it could be mutated
+        gameStates.add(DeepCopier.deepCopyGameState(initialGameState));
+        curGameState = gameStates.getFirst();
     }
 
     // take a copy of the current GameState and put it in the second last
@@ -67,14 +71,16 @@ public class LevelManager
         }
     }
 
-    // set the curGameState to the initial GameState which is the first element
-    // in the linkedList, clear the list then read only the curGameState
-    // (initial state) effectively resetting the level back to it's initial state
-    private void restartLevel()
+    // remove everything from gameStates, and re add the initial GameState
+    // effectively setting everything up the way it was when the level first
+    // was loaded
+    public void restartLevel()
     {
-        curGameState = gameStates.getFirst();
         gameStates.clear();
-        gameStates.add(curGameState);
+        // keep the initial GameState guaranteed pristine by never directly
+        // adding it to gameStates where it could be mutated
+        gameStates.add(DeepCopier.deepCopyGameState(initialGameState));
+        curGameState = gameStates.getFirst();
         movesMade = 0;
     }
 
@@ -88,7 +94,7 @@ public class LevelManager
 
     // returns a reference to a cracked wall in a coord. if one does not exist
     // null is returned.
-    public CrackedWall getCrackedWall(TileCoord pos)
+    public CrackedWall getCrackedWallFromCoord(TileCoord pos)
     {
         return curGameState
                 .getCrackedWalls()
@@ -106,7 +112,7 @@ public class LevelManager
 
     // returns a reference to a pushable block in a coord. if one does not exist
     // null is returned
-    public Block getPushableTile(TileCoord pos)
+    public Block getBlockFromCoord(TileCoord pos)
     {
         return curGameState
                 .getBlocks()
@@ -181,7 +187,7 @@ public class LevelManager
         curGameState.getSmartSprites().add(new Explosion(pos));
     }
 
-    public void update(Input input) throws SlickException
+    public void update(Input input, int delta) throws SlickException
     {
         // handle user wanting to undo or restart the level
         if (input.isKeyPressed(Input.KEY_Z)) undoState();
@@ -190,8 +196,11 @@ public class LevelManager
         // update our smartSprites
         for (SmartSprite smartSprite : curGameState.getSmartSprites())
         {
-            smartSprite.update(input, this);
+            smartSprite.update(this, input, delta);
         }
+
+        // reset playerMovedThisTick value
+        playerMovedThisTick = false;
 
         // check if user has completed the level
         if (nTargetTiles == curGameState.getnTargetTilesCovered()) levelComplete = true;
@@ -212,6 +221,15 @@ public class LevelManager
         // draw moves made 10px down 10px right from the top left corner
         graphics.drawString("Moves: " + movesMade, 10, 10);
     }
+
+    public void setPlayerMovedThisTick(boolean playerMovedThisTick) {
+        this.playerMovedThisTick = playerMovedThisTick;
+    }
+
+    public boolean getPlayerMovedThisTick() {
+        return playerMovedThisTick;
+    }
+
     public boolean getLevelComplete() {
         return levelComplete;
     }

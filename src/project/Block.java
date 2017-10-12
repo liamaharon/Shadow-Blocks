@@ -11,24 +11,23 @@ public abstract class Block extends SmartSprite implements Serializable
         super(src, pos);
     }
 
-    // update the curGameState 2D lookup list and set the block a new pos
+    // when a block moves it also needs to update the curGameState 2D block
+    // array
+    @Override
     public void move(TileCoord newPos,
                      Direction dir,
                      LevelManager levelManager) throws SlickException
     {
         levelManager.updateCurState2DBlocksList(this.getPos(), newPos);
-        setPos(newPos);
+        super.move(newPos, dir, levelManager);
     }
 
-    // most blocks are always blocked by walls, cracked walls, closed doors,
-    // as well as other blocks. return false if blocked by any of these, else
-    // true. note Tnt is an exception to this rule, and Overrides this method
+    // (most) blocks are also blocked by other blocks && cracked walls
+    @Override
     public boolean canMoveTo(TileCoord pos, LevelManager levelManager)
     {
-        return
-                (!(levelManager.tileIsBlockedByWall(pos) ||
-                levelManager.getCrackedWall(pos) != null ||
-                levelManager.tileIsBlockedByDoor(pos) ||
-                levelManager.getPushableTile(pos) != null));
+        return super.canMoveTo(pos, levelManager) &&
+               levelManager.getCrackedWallFromCoord(pos) == null &&
+               levelManager.getBlockFromCoord(pos) == null;
     }
 }

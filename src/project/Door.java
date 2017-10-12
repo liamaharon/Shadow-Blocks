@@ -16,9 +16,9 @@ public class Door extends SmartSprite {
     // class modular and adaptive for the case when we might want its open
     // state to be tied to something else
     @Override
-    public void update(Input input, LevelManager levelManager) throws SlickException
+    public void update(LevelManager levelManager, Input input, int delta) throws SlickException
     {
-        super.update(input, levelManager);
+        super.update(levelManager, input, delta);
         // switch is covered and door is closed - open the door!
         if (levelManager.getCurGameState().getSwitchIsCovered() && !isOpen)
         {

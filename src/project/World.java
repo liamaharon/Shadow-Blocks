@@ -9,7 +9,7 @@ import org.newdawn.slick.SlickException;
 public class World {
     private File[] levels;
     private LevelManager curLevelManager;
-    private int curLevelIndex = 0;
+    private int curLevelIndex = 3;
 
     public World() throws SlickException
     {
@@ -27,13 +27,13 @@ public class World {
     }
 
     // continually update each sprite until level is completed
-    public void update(Input input) throws SlickException
+    public void update(Input input, int delta) throws SlickException
     {
         if (curLevelManager.getLevelComplete()) nextLevel();
-        curLevelManager.update(input);
+        curLevelManager.update(input, delta);
     }
 
-    // curLevelManager handles how it's rendered
+    // curLevelManager handles how the current level is rendered
     public void render(Graphics graphics) throws SlickException
     {
         curLevelManager.render(graphics);

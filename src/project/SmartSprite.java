@@ -13,6 +13,12 @@ public abstract class SmartSprite extends RegularSprite implements Serializable
         super(src, pos);
     }
 
+    public void move(TileCoord pos,
+                     Direction dir,
+                     LevelManager levelManager) throws SlickException
+    {
+        setPos(pos);
+    }
 
     // returns a TileCoord with position directly adjacent to the TileCoord
     // input, in the direction specified
@@ -29,7 +35,14 @@ public abstract class SmartSprite extends RegularSprite implements Serializable
         return null;
     }
 
-    public void update(Input input, LevelManager levelManager) throws SlickException
+    // returns if a SmartSprite can move to a certain position (isn't blocked)
+    // every SmartSprite is blocked by walls and closed doors
+    public boolean canMoveTo(TileCoord pos, LevelManager levelManager)
+    {
+        return !(levelManager.tileIsBlockedByWall(pos) ||
+                 levelManager.tileIsBlockedByDoor(pos));
+    }
+    public void update(LevelManager levelManager, Input input, int delta) throws SlickException
     {
 
     }

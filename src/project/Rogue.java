@@ -7,6 +7,7 @@ import java.io.Serializable;
 
 public class Rogue extends Baddie implements Serializable
 {
+    private Direction directionMoving = Direction.LEFT;
 
     public Rogue(TileCoord pos) throws SlickException
     {
@@ -14,8 +15,8 @@ public class Rogue extends Baddie implements Serializable
     }
 
     @Override
-    public void update(Input input, LevelManager levelManager) throws SlickException
+    public void update(LevelManager levelManager, Input input, int delta) throws SlickException
     {
-        super.update(input, levelManager);
+        super.update(levelManager, input, delta);
     }
 }

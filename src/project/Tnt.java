@@ -4,7 +4,8 @@ import org.newdawn.slick.SlickException;
 
 public class Tnt extends Block {
 
-    public Tnt(TileCoord pos) throws SlickException {
+    public Tnt(TileCoord pos) throws SlickException
+    {
         super("res/tnt.png", pos);
     }
 
@@ -17,9 +18,9 @@ public class Tnt extends Block {
                      LevelManager levelManager) throws SlickException
     {
         // moving into a cracked wall, explode wall and remove self from game
-        if (levelManager.getCrackedWall(newPos) != null)
+        if (levelManager.getCrackedWallFromCoord(newPos) != null)
         {
-            levelManager.getCrackedWall(newPos).explode(levelManager);
+            levelManager.getCrackedWallFromCoord(newPos).explode(levelManager);
             levelManager.removeSpriteFromCurGameState(this);
             return;
         }
@@ -29,17 +30,11 @@ public class Tnt extends Block {
     }
 
 
-    // Tnt is blocked by everything normal blocks are, except cracked walls.
-    // so if the block is a cracked wall, return true, else return the result
-    // of regular block checks
+    // unlike all other blocks, Tnt is not blocked by cracked walls
     @Override
     public boolean canMoveTo(TileCoord pos, LevelManager levelManager)
     {
-        return  levelManager.getCrackedWall(pos) != null ||
+        return  levelManager.getCrackedWallFromCoord(pos) != null ||
                 super.canMoveTo(pos, levelManager);
-    }
-
-    private void collideWithCrackedWall(CrackedWall wall) {
-
     }
 }

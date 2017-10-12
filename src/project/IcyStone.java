@@ -1,50 +1,51 @@
 package project;
 
-import org.lwjgl.Sys;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
 public class IcyStone extends Block {
     private Direction directionMoving = Direction.NONE;
-    private double timeLastMoved;
+    private int msSinceLastMove = 0;
 
     public IcyStone(TileCoord pos) throws SlickException
     {
         super("res/ice.png", pos);
     }
 
-    // need to record when icy stones are moved and in what direction, so
-    // that we can make them slide after the initial push
+    // take note of the direction the icy stone was pushed and reset
+    // msSinceLastMove
     @Override
     public void move(TileCoord newPos,
                      Direction dir,
                      LevelManager levelManager) throws SlickException
     {
         super.move(newPos, dir, levelManager);
-        timeLastMoved = System.currentTimeMillis();
         directionMoving = dir;
+        msSinceLastMove = 0;
     }
 
-    // if the ice block is sliding and it hasn't moved in .25s, try to move it
+    // update the time since the icy stone last moved. if the ice block is
+    // sliding and it hasn't moved in .25s, try to move it
     @Override
-    public void update(Input input, LevelManager levelManager) throws SlickException
+    public void update(LevelManager levelManager, Input input, int delta) throws SlickException
     {
-        super.update(input, levelManager);
+        super.update(levelManager, input, delta);
+        msSinceLastMove += delta;
         final int QUARTER_SECOND_IN_MS = 250;
         if (directionMoving != Direction.NONE &&
-            timeLastMoved <= System.currentTimeMillis() - QUARTER_SECOND_IN_MS)
+            msSinceLastMove >= QUARTER_SECOND_IN_MS)
         {
             // get the next position the ice wants to slide
-            TileCoord nextPos = getSecondTileOver(getPos(), directionMoving);
+            TileCoord desiredPos = getSecondTileOver(getPos(), directionMoving);
             // if it can't move to that position, set its direction to NONE
-            if (!canMoveTo(nextPos, levelManager))
+            if (!canMoveTo(desiredPos, levelManager))
             {
                 directionMoving = Direction.NONE;
             }
             // else, it can move to the new position, so move there!
             else
             {
-                move(nextPos, directionMoving, levelManager);
+                move(desiredPos, directionMoving, levelManager);
             }
         }
     }

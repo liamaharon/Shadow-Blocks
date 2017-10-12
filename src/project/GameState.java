@@ -38,6 +38,10 @@ public class GameState implements Serializable
         return smartSprites;
     }
 
+    public void setPlayerCoord(TileCoord playerCoord) {
+        this.playerCoord = playerCoord;
+    }
+
     public List<List<CrackedWall>> getCrackedWalls()
     {
         return crackedWalls;
