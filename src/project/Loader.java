@@ -38,7 +38,15 @@ public class Loader
         return levels;
     }
 
-    // takes a line in CSV form containing the details of a sprite and returns a sprite with those properties
+
+    /**
+     *
+     * Takes a line in CSV form containing the details of a sprite and returns
+     * a sprite with those properties
+     * @param text
+     * @return RegularSprite
+     * @throws SlickException
+     */
     private static RegularSprite stringToSprite(String text) throws SlickException
     {
         // extract columns from csv line
