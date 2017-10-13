@@ -2,7 +2,18 @@ package project;
 
 import org.newdawn.slick.Image;
 
+/**
+ * Contains default methods used by Objects that need to be rendered to the
+ * screen
+ */
 public interface Renderable {
+    /**
+     * Converts a sprite's tile position to pixel position, and draws it
+     * to the screen centered
+     * @param img             The Image to be rendered
+     * @param pos             The tile position to render the image
+     * @param worldDimensions The dimensions of the world the sprite exists in
+     */
      default void drawToScreen(Image img,
                                TileCoord pos,
                                TileCoord worldDimensions)

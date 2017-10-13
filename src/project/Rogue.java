@@ -5,16 +5,35 @@ import org.newdawn.slick.SlickException;
 
 import java.io.Serializable;
 
+/**
+ * The rogue takes one step left each time the player moves, unless the rogue
+ * would walk into a wall; the rogue then reverses direction and moves right
+ * until they reach a wall, and so on. The rogue pushes any blocks they make
+ * contact with. If the player makes contact with the rogue, the current level
+ * restarts.
+ * Acknowledgement:
+ * This game was designed and specification written by Eleanor McMurtry.
+ */
 public class Rogue extends Baddie implements Serializable
 {
     private Direction directionMoving = Direction.LEFT;
 
+    /**
+     * Initialise the Rogue with the supplied position and it's own img src
+     * @param pos The initial position of the Rogue
+     */
     public Rogue(TileCoord pos) throws SlickException
     {
         super("res/rogue.png", pos);
     }
 
-    // The Rogue pushes as it moves
+    /**
+     * The Rogue moves like other sprites, except it also pushes blocks out of
+     * the way
+     * @param pos          The position to move to
+     * @param dir          The direction the SmartSprite is moving
+     * @param levelManager The LevelManager managing the SmartSprite's level
+     */
     @Override
     public void move(TileCoord pos,
                      Direction dir,
@@ -24,18 +43,30 @@ public class Rogue extends Baddie implements Serializable
         super.move(pos, dir, levelManager);
     }
 
-    // Rogues are also blocked by cracked walls and blocked blocks
+    /**
+     * Rogues are also blocked by CrackedWalls and blocked Blocks
+     * @param pos          The position we want to know if the Rogue can move to
+     * @param dir          The direction the Rogue is moving from
+     * @param levelManager The LevelManager managing the Rogues level
+     * @return             Boolean representing if the Rogue can move to the
+ *                         supplied position
+     */
     @Override
     public boolean canMoveTo(TileCoord pos, Direction dir, LevelManager levelManager)
     {
         return super.canMoveTo(pos, dir, levelManager) &&
-                levelManager.getCrackedWallFromCoord(pos) == null &&
-                !levelManager.tileIsBlockedByBlockedBlock(pos, dir);
+               levelManager.getCrackedWallFromCoord(pos) == null &&
+               !levelManager.tileIsBlockedByBlockedBlock(pos, dir);
     }
 
-    // if the player has moved this tick, the Rogue needs to try to move in
-    // its direction moving. if it can't move in that direction, it needs to
-    // reverse and try to move in the opposite direction.
+    /**
+     * If the player has moved this tick, the Rogue needs to try to move in
+     * its direction moving. If it can't move in that direction, it needs to
+     * reverse and try to move in the opposite direction.
+     * @param levelManager The LevelManager managing the Rogues level
+     * @param input        Represents any input
+     * @param delta        Represents time in ms since the last update
+     */
     @Override
     public void update(LevelManager levelManager, Input input, int delta) throws SlickException
     {

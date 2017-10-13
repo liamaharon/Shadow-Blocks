@@ -29,8 +29,8 @@ public class Skeleton extends Baddie {
      * direction moving. If it can't move in that direction it needs to reverse
      * and move in the opposite direction.
      * @param levelManager The LevelManger managing the Skeleton's level
-     * @param input Represents any input made this update
-     * @param delta Represents the time in ms since the last update
+     * @param input        Represents any input made this update
+     * @param delta        Represents the time in ms since the last update
      */
     @Override
     public void update(LevelManager levelManager,
@@ -80,9 +80,9 @@ public class Skeleton extends Baddie {
     /**
      * When the Skeleton moves it needs to reset it's msSinceLastMoved attribute
      * to 0
-     * @param pos The position to move to
+     * @param pos             The position to move to
      * @param directionMoving The direction the Skeleton is moving in
-     * @param levelManager The LevelManager managing the Skeleton's level
+     * @param levelManager    The LevelManager managing the Skeleton's level
      */
     @Override
     public void move(TileCoord pos,
@@ -95,10 +95,10 @@ public class Skeleton extends Baddie {
 
     /**
      * Skeletons are also blocked by blocks
-     * @param pos The position we're checking the skeleton can move to
+     * @param pos          The position we're checking the skeleton can move to
      * @param levelManager The LevelManager managing the Skeleton's level
-     * @return Boolean representing if the Skeleton can move to the supplied
-     *         position
+     * @return             Boolean representing if the Skeleton can move to the
+     *                     supplied position
      */
     @Override
     public boolean canMoveTo(TileCoord pos, LevelManager levelManager)

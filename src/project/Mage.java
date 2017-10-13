@@ -3,13 +3,28 @@ package project;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
 
+/**
+ * The Mage attempts to track down the player using Algorithm 1, as described
+ * in the spec. This algorithm should run each time the player makes a move.
+ * If the player makes contact with the mage, the current level restarts.
+ */
 public class Mage extends Baddie {
 
+    /**
+     * Initialise the Mage with its image source location and initial position
+     * @param pos
+     */
     public Mage(TileCoord pos) throws SlickException {
         super("res/mage.png", pos);
     }
 
-    // Mages are also blocked by cracked walls and all blocks
+    /**
+     * Mages are also blocked by CrackedWalls and Blocks
+     * @param pos          The position being checked
+     * @param levelManager The LevelManager managing the Mage's level
+     * @return             Boolean representing if a Mage can move to the
+     *                     pos input
+     */
     @Override
     public boolean canMoveTo(TileCoord pos, LevelManager levelManager) {
         return super.canMoveTo(pos, levelManager) &&
@@ -17,14 +32,24 @@ public class Mage extends Baddie {
                 levelManager.getBlockFromCoord(pos) == null;
     }
 
+    /**
+     * Algorithm to determine the movement of the Mage based on PlayerPosition
+     * @param levelManager The LevelManager managing the Mage's level
+     * @return             The direction the Mage should move
+     */
     // determine what direction the mage should try to move in
     private Direction determineMovementDirection(LevelManager levelManager) throws SlickException
     {
+        // get the distances between the Mage and Player, and which direction
+        // the Mage should walk in each direction
         TileCoord playerCoord = levelManager.getCurGameState().getPlayerCoord();
         int distX = getPos().getX() - playerCoord.getX();
         Direction xDir = distX < 0 ? Direction.RIGHT : Direction.LEFT;
+
         int distY = getPos().getY() - playerCoord.getY();
         Direction yDir = distY < 0 ? Direction.DOWN : Direction.UP;
+
+        // if movement if possible, move 1 tile in the direction of the player
         if (Math.abs(distX) > Math.abs(distY))
         {
             TileCoord desiredPos = levelManager.getAdjacentTileCoord(getPos(), xDir);
@@ -44,8 +69,14 @@ public class Mage extends Baddie {
         return Direction.NONE;
     }
 
-    // if the player has moved this tick, the Mage needs to try to move according
-    // to its algorithm
+    /**
+     * If the player has moved this tick, the Mage needs to try to move according
+     * to its algorithm
+     * @param levelManager The LevelManager managing the Mage's level
+     * @param input        Represents any input made this update
+     * @param delta        Represents the time in ms since the last update was
+     *                     made
+     */
     @Override
     public void update(LevelManager levelManager, Input input, int delta) throws SlickException
     {

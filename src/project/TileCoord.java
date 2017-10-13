@@ -26,8 +26,8 @@ public class TileCoord implements Serializable
      * 1. It must be another non-null TileCoord
      * 2. It's x and y attributes must match
      * @param obj The Object we are comparing to
-     * @return Boolean val representing if the supplied object is equal to this
-     *         TileCoord
+     * @return    Boolean val representing if the supplied object is equal to this
+     *            TileCoord
      */
     @Override
     public boolean equals(Object obj)

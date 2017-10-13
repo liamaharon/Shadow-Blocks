@@ -27,8 +27,8 @@ public class Tnt extends Block
     /**
      * Tnt moves like other blocks except when the position its moving to is a
      * cracked wall, in which case it explodes both itself and the cracked wall
-     * @param newPos The position the Tnt is moving to
-     * @param dir The direction the Tnt is moving during this move
+     * @param newPos       The position the Tnt is moving to
+     * @param dir          The direction the Tnt is moving during this move
      * @param levelManager The LevelManager managing the Tnt's level
      */
     @Override
@@ -50,9 +50,10 @@ public class Tnt extends Block
 
     /**
      * Unlike all other blocks, Tnt is not blocked by cracked walls
-     * @param pos The position we are checking is blocked to the Tnt
+     * @param pos          The position we are checking is blocked to the Tnt
      * @param levelManager The LevelManager managing the Tnt's level
-     * @return boolean Represents if a Tnt is able to move to @param pos
+     * @return             Boolean representing if a Tnt is able to move to
+     *                     the supplied pos
      */
     @Override
     public boolean canMoveTo(TileCoord pos, LevelManager levelManager)

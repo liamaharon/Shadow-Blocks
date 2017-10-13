@@ -1,6 +1,5 @@
 package project;
 
-import org.lwjgl.Sys;
 import org.newdawn.slick.Graphics;
 import org.newdawn.slick.Input;
 import org.newdawn.slick.SlickException;
@@ -8,6 +7,9 @@ import org.newdawn.slick.SlickException;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * A LevelManager is responsible for managing all aspects of a single level
+ */
 public class LevelManager
 {
     private TileCoord levelDimensions;
@@ -24,6 +26,19 @@ public class LevelManager
     private GameState curGameState;
     private Direction playerDirectionThisTick;
 
+    /**
+     * Initialise a LevelManager with supplied attributes
+     * @param levelDimensions  The dimensions of the level
+     * @param permBlockedTiles A 2D List of any permanently blocked tiles in the
+     *                         level
+     * @param targetTiles      A 2D List of booleans representing of there is a
+     *                         target tile at any coordinate
+     * @param nTargetTiles     How many target tiles there are in the level
+     * @param regularSprites   A List of RegularSprites in the level
+     * @param switchCoord      The coordinate of the Switch in this level(if any)
+     * @param doorCoord        The coordinate of the Door in this level (if any)
+     * @param initialGameState The level's initial GameState
+     */
     public LevelManager(TileCoord levelDimensions,
                         List<List<Boolean>> permBlockedTiles,
                         List<List<Boolean>> targetTiles,
@@ -50,9 +65,12 @@ public class LevelManager
         curGameState = gameStates.getFirst();
     }
 
-    // take a copy of the current GameState and put it in the second last
-    // position in the linkedlist behind curGameState, effectively saving the
-    // game. also increment moves made.
+    /**
+     * Take a copy of the current GameState and put it in the second last
+     * position in the LinkedList behind curGameState. This means if we want
+     * to restore back to the point before the save we simply pop the top of the
+     * LinkedList and the new top is the last save. Also increment moves made.
+     */
     public void saveState()
     {
         int indexToSave = gameStates.size()-1;
@@ -60,8 +78,11 @@ public class LevelManager
         movesMade++;
     }
 
-    // pops the last item off gameStates, sets the new tail to be the new
-    // curGameState, decrement movesMade
+    /**
+     * If possible, pops the last item off gameStates, making the new tail the
+     * GameState directly before the last save. Also decrement movesMade.
+     * curGameState, decrement movesMade
+     */
     private void undoState()
     {
         if (movesMade > 0 && gameStates.size() > 0)
@@ -72,9 +93,11 @@ public class LevelManager
         }
     }
 
-    // remove everything from gameStates, and re add the initial GameState
-    // effectively setting everything up the way it was when the level first
-    // was loaded
+    /**
+     * Remove everything from gameStates, and re-add the initial GameState
+     * effectively setting everything up the way it was when the level first
+     * was loaded
+     */
     public void restartLevel()
     {
         gameStates.clear();
@@ -85,7 +108,11 @@ public class LevelManager
         movesMade = 0;
     }
 
-    // returns if a tile is permanently blocked by a wall
+    /**
+     * Returns if a tile is permanently blocked by a wall
+     * @param pos The tile being checked
+     * @return    If the tile is permanently blocked by a wall or not
+     */
     public boolean tileIsBlockedByWall(TileCoord pos)
     {
         return permBlockedTiles
@@ -93,8 +120,12 @@ public class LevelManager
                 .get(pos.getY());
     }
 
-    // returns a reference to a cracked wall in a coord. if one does not exist
-    // null is returned.
+    /**
+     * Returns a reference to a Crackedwall in a coord.
+     * @param pos The position being checked for a CrackedWall
+     * @return    The CrackedWall from that position, or null if there is no
+     *            wall there.
+     */
     public CrackedWall getCrackedWallFromCoord(TileCoord pos)
     {
         return curGameState
@@ -103,7 +134,11 @@ public class LevelManager
                 .get(pos.getY());
     }
 
-    // return if a tile is blocked by a door (the door must be closed, obviously)
+    /**
+     * Returns if a position is blocked by a Door (Door must be closed)
+     * @param pos Position being checked
+     * @return    If the position is blocked by a Door
+     */
     public boolean tileIsBlockedByDoor(TileCoord pos)
     {
         return  doorCoord != null &&
@@ -111,7 +146,13 @@ public class LevelManager
                 !curGameState.getSwitchIsCovered();
     }
 
-    // returns if a tile is blocked by a pushable block that is itself blocked
+    /**
+     * Checks if a tile is blocked by a pushable Block that is itself blocked
+     * @param pos The position of the Block being checked
+     * @param dir The directon we're checking is it possible to move the Block
+     * @return    If the tile is blocked by a pushable Block that is itself
+     *            blocked
+     */
     public boolean tileIsBlockedByBlockedBlock(TileCoord pos, Direction dir)
     {
         // try get a block from the provided pos
@@ -128,8 +169,11 @@ public class LevelManager
         return !blockAtPos.canMoveTo(adjacentTileCoord, this);
     }
 
-    // returns a reference to a pushable block in a coord. if one does not exist
-    // null is returned
+    /**
+     * Returns a ref to a Block at the specified coord, if any
+     * @param pos The position being checked
+     * @return    A reference to the Block, or null if there is no block
+     */
     public Block getBlockFromCoord(TileCoord pos)
     {
         return curGameState
@@ -138,8 +182,14 @@ public class LevelManager
                 .get(pos.getY());
     }
 
-    // returns a TileCoord with position directly adjacent to the TileCoord
-    // input, in the direction specified
+    /**
+     * Computes the position of a TileCoord directly adjacent to the TileCoord
+     * specified, in the direction specified
+     * @param pos Position to find adjacent TileCoord to
+     * @param dir Direction to look from the supplied position
+     * @return    TileCoord adjacent to the specified TileCoord in the specified
+     *            direction
+     */
     public TileCoord getAdjacentTileCoord(TileCoord pos, Direction dir)
     {
         switch(dir)
@@ -153,9 +203,13 @@ public class LevelManager
         return null;
     }
 
-    // move a block from one place to another in the current GameStates
-    // blocks 2D lookup array. also update the nTilesCovered && switchIsCovered
-    // if required.
+    /**
+     * Moves a Block from one place to another in the current GameStates 2D
+     * List of Blocks. Also update nTilesCovered && switchIsCovered if
+     * required.
+     * @param prev The position a block is moving from
+     * @param cur  The position a block is moving to
+     */
     public void updateCurState2DBlocksList(TileCoord prev, TileCoord cur)
     {
         // take a note of the block we're moving
@@ -192,7 +246,10 @@ public class LevelManager
         }
     }
 
-    // removes a smart sprite from the current game state
+    /**
+     * Entirely removes a SmartSprite from the current GameState
+     * @param smartSprite A reference to the SmartSprite to be removed
+     */
     public void removeSpriteFromCurGameState(SmartSprite smartSprite)
     {
         // remove from list of every smartSprite
@@ -213,16 +270,24 @@ public class LevelManager
         }
     }
 
-    // creates a new explosion at a given position and adds it to the
-    // curGameState smartSprites
+    /**
+     * Create a new Explosion sprite at the specified position and add it to
+     * the current GameState
+     * @param pos The position to create the Explosion
+     */
     public void createExplosion(TileCoord pos) throws SlickException
     {
         curGameState.getSmartSprites().add(new Explosion(pos));
     }
 
-    // need to watch for player input before we update the sprites, as some
-    // sprites actions (rogue) depend on if a player will move before the
-    // player itself actually updates
+    /**
+     * Checks for any input that would effect the Player sprite, and records if
+     * there was any. This needs to be done before updating any SmartSprites
+     * because some sprites updates depend on the Player having updated before
+     * the Player itself is updated, and also we need to save the GameState
+     * if the Player wants to move before any sprites update.
+     * @param input Object we can detect player input from
+     */
     private void watchForPlayerInput(Input input)
     {
         if (input.isKeyPressed(Input.KEY_UP))
@@ -251,6 +316,14 @@ public class LevelManager
         }
     }
 
+    /**
+     * Main update method called by the World. Checks if the user wants to undo
+     * or restart the level, then checks for player input and updates all
+     * SmartSprites in the current GameState. It then checks if the player has
+     * won the level or not.
+     * @param input Object we can detect user input from
+     * @param delta Time in ms since the last update
+     */
     public void update(Input input, int delta) throws SlickException
     {
         // handle user wanting to undo or restart the level
@@ -271,6 +344,10 @@ public class LevelManager
         if (nTargetTiles == curGameState.getnTargetTilesCovered()) levelComplete = true;
     }
 
+    /**
+     * Renders the entire level
+     * @param graphics Object we can draw custom things with, like a String
+     */
     public void render(Graphics graphics) {
         // redraw RegularSprites that never update over the course of a level
         for (RegularSprite regSprite : regularSprites) {
@@ -284,14 +361,23 @@ public class LevelManager
         graphics.drawString("Moves: " + movesMade, 10, 10);
     }
 
+    /**
+     * @return The Player's direction moved this tick
+     */
     public Direction getPlayerDirectionThisTick() {
         return playerDirectionThisTick;
     }
 
+    /**
+     * @return If the level is completed or not
+     */
     public boolean getLevelComplete() {
         return levelComplete;
     }
 
+    /**
+     * @return The current level's GameState
+     */
     public GameState getCurGameState() { return curGameState; }
 }
 

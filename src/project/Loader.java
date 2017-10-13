@@ -10,17 +10,33 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import org.newdawn.slick.SlickException;
 
+/**
+ * The Loader class is responsible for taking resources from non .java files
+ * and turning them into Java objects.
+ */
 public class Loader
 {
     private static final File LEVELS_FOLDER = new File("res/levels");
 
-    // Adapted from https://stackoverflow.com/a/42694706/7108044
+    /**
+     * Looks in the LEVELS_FOLDER location and returns a stored File[] of all
+     * the levels stored there.
+     * Adapted from https://stackoverflow.com/a/42694706/7108044
+     * @return Sorted by name File[] of all the levels in LEVELS_FOLDER
+     */
     public static File[] getSortedLevels()
     {
         File[] levels = LEVELS_FOLDER.listFiles();
         assert(levels != null);
         Arrays.sort(levels, new Comparator<File>()
         {
+            /**
+             * Specifies how we want to sort the Files
+             * @param f1 The 1st File to be compared
+             * @param f2 The 2nd File to be compared
+             * @return   -1 if 1st File < 2nd File, 0 if Files are equal, 1 if
+             *           1st File > 2nd File
+             */
             @Override
             public int compare(File f1, File f2)
             {
@@ -40,12 +56,10 @@ public class Loader
 
 
     /**
-     *
      * Takes a line in CSV form containing the details of a sprite and returns
      * a sprite with those properties
-     * @param text
-     * @return RegularSprite
-     * @throws SlickException
+     * @param text           A line in CSV form representing a Sprite
+     * @return RegularSprite A sprite with the properties detailed in the text
      */
     private static RegularSprite stringToSprite(String text) throws SlickException
     {
@@ -82,6 +96,9 @@ public class Loader
     /**
      * Creates and initialises a LevelManager.
      * Adapted from Grok worksheet "Reading Files".
+     * @param file The file containing the level
+     * @return     A LevelManager containing all the properties specified in the
+     *             input file
      */
     public static LevelManager loadLevel(File file) throws SlickException
     {
@@ -221,6 +238,15 @@ public class Loader
                                 initialGameState);
     }
 
+    /**
+     * Takes an uninitialised 2D list and initialises it to the specified size,
+     * with the specified initial values
+     * @param list       The 2D list to be initialised
+     * @param xMax       The x size we want to initialise to
+     * @param yMax       The y size we want to initialise to
+     * @param initialVal The initial value we want to fill the List with
+     * @param <T>        The type that the List will be holding
+     */
     private static <T> void initialise2DList(List<List<T>> list,
                                              int xMax,
                                              int yMax,
