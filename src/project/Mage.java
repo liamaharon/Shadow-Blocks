@@ -12,7 +12,7 @@ public class Mage extends Baddie {
 
     /**
      * Initialise the Mage with its image source location and initial position
-     * @param pos
+     * @param pos Initial position
      */
     public Mage(TileCoord pos) throws SlickException {
         super("res/mage.png", pos);

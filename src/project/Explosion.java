@@ -15,8 +15,7 @@ public class Explosion extends SmartSprite {
 
     /**
      * Initialise a new explosion at the specified position
-     * @param pos
-     * @throws SlickException
+     * @param pos Initial position
      */
     public Explosion(TileCoord pos) throws SlickException
     {

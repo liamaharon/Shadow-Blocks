@@ -16,8 +16,7 @@ public class IcyStone extends Block {
 
     /**
      * Initialise the IcyStone
-     * @param pos
-     * @throws SlickException
+     * @param pos Initial position
      */
     public IcyStone(TileCoord pos) throws SlickException
     {
