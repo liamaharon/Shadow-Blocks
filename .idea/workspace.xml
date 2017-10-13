@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e8d3b8f6-8d45-4740-88e9-3c8727c3cb2c" name="Default" comment="Set to start with lvl 1">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+    <list default="true" id="e8d3b8f6-8d45-4740-88e9-3c8727c3cb2c" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/Loader.java" afterPath="$PROJECT_DIR$/src/project/Loader.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/Rogue.java" afterPath="$PROJECT_DIR$/src/project/Rogue.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/project/World.java" afterPath="$PROJECT_DIR$/src/project/World.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -25,214 +24,14 @@
     <splitter split-orientation="horizontal" split-proportion="0.5040549">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="525">
-          <file leaf-file-name="World.java" pinned="false" current-in-tab="false">
+          <file leaf-file-name="World.java" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/project/World.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="216">
-                  <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+                <state relative-caret-position="252">
+                  <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
                   <folding>
                     <element signature="imports" expanded="true" />
                   </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="MODULES/mdl-shadow-blocks" pinned="false" current-in-tab="false">
-            <entry file="uml://MODULES/mdl-shadow-blocks">
-              <provider selected="true" editor-type-id="UmlEditorProvider">
-                <state>
-                  <ID>MODULES</ID>
-                  <OriginalElement>mdl-shadow-blocks</OriginalElement>
-                  <nodes>
-                    <node x="0.0" y="0.0">mdl-shadow-blocks</node>
-                    <node x="44.5" y="81.0">lib-lib</node>
-                  </nodes>
-                  <notes />
-                  <edges>
-                    <edge source="mdl-shadow-blocks" target="lib-lib">
-                      <point x="0.0" y="15.5" />
-                      <point x="0.0" y="-15.5" />
-                    </edge>
-                  </edges>
-                  <settings layout="Hierarchic Group" zoom="1.0" x="-65.0" y="13.5" />
-                  <SelectedNodes />
-                  <Categories>
-                    <Category>Libraries</Category>
-                    <Category>Test dependencies</Category>
-                  </Categories>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="JAVA/project" pinned="false" current-in-tab="true">
-            <entry file="uml://JAVA/project">
-              <provider selected="true" editor-type-id="UmlEditorProvider">
-                <state>
-                  <ID>JAVA</ID>
-                  <OriginalElement>project</OriginalElement>
-                  <nodes>
-                    <node x="1126.0" y="1743.0">project.Direction</node>
-                    <node x="710.0" y="1743.0">project.Loader</node>
-                    <node x="0.0" y="1743.0">project.App</node>
-                    <node x="619.0" y="758.0">project.IcyStone</node>
-                    <node x="1283.0" y="1743.0">project.TileCoord</node>
-                    <node x="2393.5" y="368.5">project.Switch</node>
-                    <node x="2136.0" y="105.0">project.RegularSprite</node>
-                    <node x="0.0" y="968.0">project.LevelManager</node>
-                    <node x="1711.5" y="308.0">project.SmartSprite</node>
-                    <node x="2082.5" y="0.0">project.Renderable</node>
-                    <node x="411.0" y="807.0">project.Stone</node>
-                    <node x="1513.5" y="368.5">project.Wall</node>
-                    <node x="1980.0" y="746.0">project.Skeleton</node>
-                    <node x="978.0" y="968.0">project.GameState</node>
-                    <node x="900.9991228070177" y="556.0">project.Player</node>
-                    <node x="309.5" y="568.0">project.Block</node>
-                    <node x="2189.5" y="368.5">project.Floor</node>
-                    <node x="1505.0" y="544.0">project.Baddie</node>
-                    <node x="2615.0" y="555.5">project.Explosion</node>
-                    <node x="0.0" y="782.5">project.Tnt</node>
-                    <node x="2331.0" y="580.0">project.CrackedWall</node>
-                    <node x="2607.5" y="368.5">project.Target</node>
-                    <node x="0.0" y="2037.0">project.DeepCopier</node>
-                    <node x="377.0" y="1743.0">project.World</node>
-                    <node x="1508.0" y="770.5">project.Mage</node>
-                    <node x="1983.0" y="555.5">project.Door</node>
-                    <node x="1030.0" y="758.0">project.Rogue</node>
-                  </nodes>
-                  <notes />
-                  <edges>
-                    <edge source="project.Switch" target="project.RegularSprite">
-                      <point x="0.0" y="-27.5" />
-                      <point x="2490.5" y="288.0" />
-                      <point x="2339.7" y="288.0" />
-                      <point x="58.19999999999982" y="76.5" />
-                    </edge>
-                    <edge source="project.Mage" target="project.Baddie">
-                      <point x="0.0" y="-64.0" />
-                      <point x="0.0" y="76.0" />
-                    </edge>
-                    <edge source="project.RegularSprite" target="project.Renderable">
-                      <point x="0.0" y="-76.5" />
-                      <point x="0.0" y="27.5" />
-                    </edge>
-                    <edge source="project.CrackedWall" target="project.SmartSprite">
-                      <point x="0.0" y="-40.0" />
-                      <point x="2463.0" y="514.0" />
-                      <point x="2055.0" y="514.0" />
-                      <point x="114.5" y="88.0" />
-                    </edge>
-                    <edge source="project.SmartSprite" target="project.RegularSprite">
-                      <point x="0.0" y="-88.0" />
-                      <point x="1940.5" y="288.0" />
-                      <point x="2223.3" y="288.0" />
-                      <point x="-58.19999999999982" y="76.5" />
-                    </edge>
-                    <edge source="project.Baddie" target="project.SmartSprite">
-                      <point x="0.0" y="-76.0" />
-                      <point x="1734.0" y="524.0" />
-                      <point x="1902.3333333333333" y="524.0" />
-                      <point x="-38.16666666666674" y="88.0" />
-                    </edge>
-                    <edge source="project.Tnt" target="project.Block">
-                      <point x="0.0" y="-52.0" />
-                      <point x="195.5" y="721.0" />
-                      <point x="374.6666666666665" y="721.0" />
-                      <point x="-130.33333333333337" y="52.0" />
-                    </edge>
-                    <edge source="project.Rogue" target="project.Baddie">
-                      <point x="0.0" y="-76.5" />
-                      <point x="1259.0" y="721.0" />
-                      <point x="1581.3333333333333" y="721.0" />
-                      <point x="-152.66666666666674" y="76.0" />
-                    </edge>
-                    <edge source="project.Player" target="project.SmartSprite">
-                      <point x="0.0" y="-64.0" />
-                      <point x="1129.9991228070176" y="514.0" />
-                      <point x="1826.0" y="514.0" />
-                      <point x="-114.5" y="88.0" />
-                    </edge>
-                    <edge source="project.IcyStone" target="project.Block">
-                      <point x="0.0" y="-76.5" />
-                      <point x="814.5" y="721.0" />
-                      <point x="635.3333333333335" y="721.0" />
-                      <point x="130.33333333333337" y="52.0" />
-                    </edge>
-                    <edge source="project.Door" target="project.SmartSprite">
-                      <point x="0.0" y="-64.5" />
-                      <point x="2147.0" y="524.0" />
-                      <point x="1978.6666666666667" y="524.0" />
-                      <point x="38.16666666666674" y="88.0" />
-                    </edge>
-                    <edge source="project.Floor" target="project.RegularSprite">
-                      <point x="0.0" y="-27.5" />
-                      <point x="0.0" y="76.5" />
-                    </edge>
-                    <edge source="project.Stone" target="project.Block">
-                      <point x="0.0" y="-27.5" />
-                      <point x="0.0" y="52.0" />
-                    </edge>
-                    <edge source="project.Skeleton" target="project.Baddie">
-                      <point x="0.0" y="-88.5" />
-                      <point x="2175.5" y="721.0" />
-                      <point x="1886.6666666666665" y="721.0" />
-                      <point x="152.66666666666652" y="76.0" />
-                    </edge>
-                    <edge source="project.Target" target="project.RegularSprite">
-                      <point x="0.0" y="-27.5" />
-                      <point x="2704.0" y="278.0" />
-                      <point x="2397.9" y="278.0" />
-                      <point x="116.40000000000009" y="76.5" />
-                    </edge>
-                    <edge source="project.Explosion" target="project.SmartSprite">
-                      <point x="0.0" y="-64.5" />
-                      <point x="2779.0" y="504.0" />
-                      <point x="2131.3333333333335" y="504.0" />
-                      <point x="190.83333333333348" y="88.0" />
-                    </edge>
-                    <edge source="project.Block" target="project.SmartSprite">
-                      <point x="0.0" y="-52.0" />
-                      <point x="505.0" y="504.0" />
-                      <point x="1749.6666666666667" y="504.0" />
-                      <point x="-190.83333333333326" y="88.0" />
-                    </edge>
-                    <edge source="project.Wall" target="project.RegularSprite">
-                      <point x="0.0" y="-27.5" />
-                      <point x="1602.5" y="278.0" />
-                      <point x="2165.1" y="278.0" />
-                      <point x="-116.40000000000009" y="76.5" />
-                    </edge>
-                  </edges>
-                  <settings layout="Hierarchic Group" zoom="0.4485804416403787" x="467.5042194092824" y="1112.6723160740148" />
-                  <SelectedNodes />
-                  <Categories>
-                    <Category>Constructors</Category>
-                    <Category>Fields</Category>
-                    <Category>Methods</Category>
-                    <Category>Inner Classes</Category>
-                    <Category>Properties</Category>
-                  </Categories>
-                  <SCOPE>All</SCOPE>
-                  <VISIBILITY>private</VISIBILITY>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Renderable.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/project/Renderable.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="432">
-                  <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="5.lvl" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/res/levels/5.lvl">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="0">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
                 </state>
               </provider>
             </entry>
@@ -240,50 +39,8 @@
           <file leaf-file-name="Rogue.java" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/project/Rogue.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="423">
-                  <caret line="71" column="8" lean-forward="false" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="8" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Skeleton.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/project/Skeleton.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="162">
-                  <caret line="38" column="51" lean-forward="true" selection-start-line="38" selection-start-column="51" selection-end-line="38" selection-end-column="51" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Baddie.java" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/project/Baddie.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="355">
-                  <caret line="36" column="10" lean-forward="false" selection-start-line="36" selection-start-column="10" selection-end-line="36" selection-end-column="10" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="3.lvl" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/res/levels/3.lvl">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-650">
-                  <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="4.lvl" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/res/levels/4.lvl">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="52">
-                  <caret line="115" column="8" lean-forward="false" selection-start-line="115" selection-start-column="8" selection-end-line="115" selection-end-column="8" />
+                <state relative-caret-position="397">
+                  <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -482,11 +239,11 @@
         <option value="$PROJECT_DIR$/src/project/Mage.java" />
         <option value="$PROJECT_DIR$/res/levels/4.lvl" />
         <option value="$PROJECT_DIR$/src/project/GameState.java" />
-        <option value="$PROJECT_DIR$/src/project/Rogue.java" />
         <option value="$PROJECT_DIR$/src/project/Baddie.java" />
         <option value="$PROJECT_DIR$/src/project/Renderable.java" />
-        <option value="$PROJECT_DIR$/src/project/World.java" />
         <option value="$PROJECT_DIR$/src/project/Loader.java" />
+        <option value="$PROJECT_DIR$/src/project/Rogue.java" />
+        <option value="$PROJECT_DIR$/src/project/World.java" />
       </list>
     </option>
   </component>
@@ -564,7 +321,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode" />
-    <property name="SearchEverywhereHistoryKey" value="Rendera&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Renderable.java&#10;Wor&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/World.java&#10;Ro&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Rogue.java&#10;Badd&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Baddie.java&#10;baddi&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Baddie.java&#10;world&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/World.java&#10;Rogue&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Rogue.java&#10;skele&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Skeleton.java&#10;Rog&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Rogue.java&#10;Mage&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Mage.java&#10;rogue&#9;PSI&#9;JAVA://project.Rogue&#10;Leve&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/LevelManager.java&#10;pl&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Player.java&#10;Pla&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Player.java&#10;Loader&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Loader.java&#10;Ske&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Skeleton.java&#10;Skele&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Skeleton.java&#10;Ic&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/IcyStone.java&#10;Block&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Block.java&#10;World&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/World.java&#10;wo&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/World.java&#10;Level&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/LevelManager.java&#10;Smart&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/SmartSprite.java&#10;B&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Baddie.java&#10;baddie&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Baddie.java&#10;bad&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Baddie.java&#10;badd&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Baddie.java&#10;Icy&#9;PSI&#9;JAVA://project.IcyStone&#10;App&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/App.java&#10;Worl&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/World.java&#10;Wolrd&#9;null&#9;null&#10;app&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/App.java&#10;Player&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Player.java&#10;level&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/LevelManager.java&#10;Game&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/GameState.java&#10;Baddie&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Baddie.java&#10;Baddir&#9;PSI&#9;JAVA://sun.security.krb5.internal.Krb5#KRB_AP_ERR_BADDIRECTION&#10;baddir&#9;PSI&#9;JAVA://sun.security.krb5.internal.Krb5#KRB_AP_ERR_BADDIRECTION&#10;Tnt&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Tnt.java&#10;Sma&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/SmartSprite.java&#10;lock&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Block.java&#10;block&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Block.java&#10;sma&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/SmartSprite.java&#10;Load&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Loader.java&#10;door&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Door.java&#10;GameS&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/GameState.java&#10;LM&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/LevelManager.java&#10;TIle&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/TileCoord.java&#10;smartS&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/SmartSprite.java&#10;Play&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Player.java" />
+    <property name="SearchEverywhereHistoryKey" value="Rog&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Rogue.java&#10;Rendera&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Renderable.java&#10;Wor&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/World.java&#10;Ro&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Rogue.java&#10;Badd&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Baddie.java&#10;baddi&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Baddie.java&#10;world&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/World.java&#10;Rogue&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Rogue.java&#10;skele&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Skeleton.java&#10;Mage&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Mage.java&#10;rogue&#9;PSI&#9;JAVA://project.Rogue&#10;Leve&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/LevelManager.java&#10;pl&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Player.java&#10;Pla&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Player.java&#10;Loader&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Loader.java&#10;Ske&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Skeleton.java&#10;Skele&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Skeleton.java&#10;Ic&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/IcyStone.java&#10;Block&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Block.java&#10;World&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/World.java&#10;wo&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/World.java&#10;Level&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/LevelManager.java&#10;Smart&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/SmartSprite.java&#10;B&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Baddie.java&#10;baddie&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Baddie.java&#10;bad&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Baddie.java&#10;badd&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Baddie.java&#10;Icy&#9;PSI&#9;JAVA://project.IcyStone&#10;App&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/App.java&#10;Worl&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/World.java&#10;Wolrd&#9;null&#9;null&#10;app&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/App.java&#10;Player&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Player.java&#10;level&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/LevelManager.java&#10;Game&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/GameState.java&#10;Baddie&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Baddie.java&#10;Baddir&#9;PSI&#9;JAVA://sun.security.krb5.internal.Krb5#KRB_AP_ERR_BADDIRECTION&#10;baddir&#9;PSI&#9;JAVA://sun.security.krb5.internal.Krb5#KRB_AP_ERR_BADDIRECTION&#10;Tnt&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Tnt.java&#10;Sma&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/SmartSprite.java&#10;lock&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Block.java&#10;block&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Block.java&#10;sma&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/SmartSprite.java&#10;Load&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Loader.java&#10;door&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Door.java&#10;GameS&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/GameState.java&#10;LM&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/LevelManager.java&#10;TIle&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/TileCoord.java&#10;smartS&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/SmartSprite.java&#10;Play&#9;FILE&#9;file:///home/liam/Github/shadow-blocks/src/project/Player.java" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -710,7 +467,7 @@
       <workItem from="1507634981975" duration="3245000" />
       <workItem from="1507683629042" duration="19292000" />
       <workItem from="1507780072625" duration="9838000" />
-      <workItem from="1507789947615" duration="26183000" />
+      <workItem from="1507789947615" duration="27135000" />
     </task>
     <task id="LOCAL-00001" summary="Begun work on Project 2B">
       <created>1507358674516</created>
@@ -810,14 +567,22 @@
       <option name="project" value="LOCAL" />
       <updated>1507815911311</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Begun docstring comments">
+      <created>1507817757924</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1507817757924</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136642000" />
+    <option name="totallyTimeSpent" value="137594000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="-4" width="1857" height="1092" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -832,7 +597,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13584906" sideWeight="0.49434572" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.13584906" sideWeight="0.49434572" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32924336" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -902,7 +667,8 @@
     <MESSAGE value="v1 complete" />
     <MESSAGE value="Fixed Mage" />
     <MESSAGE value="Fixed uncentered screen" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed uncentered screen" />
+    <MESSAGE value="Begun docstring comments" />
+    <option name="LAST_COMMIT_MESSAGE" value="Begun docstring comments" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1232,14 +998,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/levels/5.lvl">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/project/GameState.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1248,14 +1006,6 @@
             <element signature="imports" expanded="true" />
             <element signature="method#setSwitchIsCovered#0;class#GameState#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/Rogue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="423">
-          <caret line="71" column="8" lean-forward="false" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1272,49 +1022,6 @@
         <state relative-caret-position="52">
           <caret line="115" column="8" lean-forward="false" selection-start-line="115" selection-start-column="8" selection-end-line="115" selection-end-column="8" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/Renderable.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/project/World.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="uml://MODULES/mdl-shadow-blocks">
-      <provider selected="true" editor-type-id="UmlEditorProvider">
-        <state>
-          <ID>MODULES</ID>
-          <OriginalElement>mdl-shadow-blocks</OriginalElement>
-          <nodes>
-            <node x="0.0" y="0.0">mdl-shadow-blocks</node>
-            <node x="44.5" y="81.0">lib-lib</node>
-          </nodes>
-          <notes />
-          <edges>
-            <edge source="mdl-shadow-blocks" target="lib-lib">
-              <point x="0.0" y="15.5" />
-              <point x="0.0" y="-15.5" />
-            </edge>
-          </edges>
-          <settings layout="Hierarchic Group" zoom="1.0" x="-65.0" y="13.5" />
-          <SelectedNodes />
-          <Categories>
-            <Category>Libraries</Category>
-            <Category>Test dependencies</Category>
-          </Categories>
         </state>
       </provider>
     </entry>
@@ -1473,6 +1180,60 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="265">
           <caret line="46" column="27" lean-forward="false" selection-start-line="46" selection-start-column="27" selection-end-line="46" selection-end-column="27" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://MODULES/mdl-shadow-blocks">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>MODULES</ID>
+          <OriginalElement>mdl-shadow-blocks</OriginalElement>
+          <nodes>
+            <node x="" y="">mdl-shadow-blocks</node>
+            <node x="" y="">lib-lib</node>
+          </nodes>
+          <notes />
+          <edges />
+          <settings layout="Hierarchic Group" zoom="1.0" x="98.5" y="50.0" />
+          <SelectedNodes />
+          <Categories>
+            <Category>Libraries</Category>
+            <Category>Test dependencies</Category>
+          </Categories>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Renderable.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="27" column="23" lean-forward="false" selection-start-line="27" selection-start-column="23" selection-end-line="27" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/levels/5.lvl">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/Rogue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="397">
+          <caret line="71" column="0" lean-forward="false" selection-start-line="71" selection-start-column="0" selection-end-line="71" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/project/World.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="4" lean-forward="false" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

@@ -69,6 +69,5 @@ public class Rogue extends Baddie implements Serializable
         TileCoord nextPos = levelManager.getAdjacentTileCoord(getPos(),
                                                               directionMoving);
         move(nextPos, directionMoving, levelManager);
-        attack(nextPos, levelManager);
     }
 }
