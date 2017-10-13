@@ -60,7 +60,7 @@ public class World {
      * @param graphics object that can be used to draw custom things to
      *                 screen, ie a String
      */
-    public void render(Graphics graphics) throws SlickException
+    public void render(Graphics graphics)
     {
         curLevelManager.render(graphics);
     }

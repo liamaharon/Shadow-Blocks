@@ -38,8 +38,7 @@ public class Mage extends Baddie {
      * @return             The direction the Mage should move
      */
     // determine what direction the mage should try to move in
-    private Direction determineMovementDirection(LevelManager levelManager) throws SlickException
-    {
+    private Direction determineMovementDirection(LevelManager levelManager) {
         // get the distances between the Mage and Player, and which direction
         // the Mage should walk in each direction
         TileCoord playerCoord = levelManager.getCurGameState().getPlayerCoord();
