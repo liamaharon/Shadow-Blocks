@@ -86,8 +86,6 @@ public class Mage extends Baddie {
         // get the direction the mage should to move in
         Direction movementDirection = determineMovementDirection(levelManager);
 
-        System.out.println(movementDirection);
-
         // if the direction is NONE, do nothing
         if (movementDirection == Direction.NONE) return;
 
